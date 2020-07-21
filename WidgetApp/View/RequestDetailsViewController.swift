@@ -19,10 +19,7 @@ class RequestDetailsViewController: UIViewController {
       b.backgroundColor = UIColor.black
       return b
     }()
-
-
     var requestDetailsViewModel: RequestCellViewModel!
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,15 +35,14 @@ class RequestDetailsViewController: UIViewController {
 
 extension RequestDetailsViewController{
 
-
     func initUI(){
     segmentedControl.setTitleTextAttributes([
-        NSAttributedString.Key.font : UIFont(name: "DINCondensed-Bold", size: 18) as Any,
+        NSAttributedString.Key.font: UIFont(name: "DINCondensed-Bold", size: 18) as Any,
         NSAttributedString.Key.foregroundColor: UIColor.lightGray
         ], for: .normal)
 
     segmentedControl.setTitleTextAttributes([
-        NSAttributedString.Key.font : UIFont(name: "DINCondensed-Bold", size: 18) as Any,
+        NSAttributedString.Key.font: UIFont(name: "DINCondensed-Bold", size: 18) as Any,
         NSAttributedString.Key.foregroundColor: UIColor.black
         ], for: .selected)
 
@@ -54,7 +50,6 @@ extension RequestDetailsViewController{
 
         view.addSubview(buttonBar)
 
-        
         buttonBar.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor).isActive = true
         buttonBar.heightAnchor.constraint(equalToConstant: 5).isActive = true
         // Constrain the button bar to the left side of the segmented control
@@ -88,8 +83,5 @@ extension RequestDetailsViewController{
             break;
         }
     }
-
-
-
 
 }

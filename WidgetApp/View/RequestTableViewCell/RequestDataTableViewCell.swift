@@ -12,9 +12,7 @@ class RequestDataTableViewCell: UITableViewCell {
 
     @IBOutlet var statusImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
-    
     @IBOutlet var statusLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
-
 
 }

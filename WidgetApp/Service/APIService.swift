@@ -30,7 +30,7 @@ class APIService: APIServiceProtocol {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             let requests = try! decoder.decode(Requests.self, from: data)
-            complete(true, requests.Requests, nil)
+            complete(true, requests.requests, nil)
         }
     }
 
@@ -79,10 +79,7 @@ class APIService: APIServiceProtocol {
                 ])
             ]
 
-
             complete(true, activities, nil)
         }
     }
 }
-
-

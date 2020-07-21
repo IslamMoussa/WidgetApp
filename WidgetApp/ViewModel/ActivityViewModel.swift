@@ -138,9 +138,6 @@ class ActivityViewModel {
         activities.remove(at: source)
         activities.insert(movedObject, at: destination)
         self.reloadTableViewClosure?()
-
-
-        print(self.activities)
     }
 
 

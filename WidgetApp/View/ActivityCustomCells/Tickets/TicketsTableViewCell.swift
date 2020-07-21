@@ -13,15 +13,12 @@ class TicketsTableViewCell: UITableViewCell {
     @IBOutlet var headerImageView: UIImageView!
     @IBOutlet var headerTitleLabel: UILabel!
     @IBOutlet var headerEditButton: UIButton!
-
-
     @IBOutlet var imgView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
-
     @IBOutlet var showTicketButton: UIButton!
 
-    var ticketCellViewModel : TicketCellViewModel? {
+    var ticketCellViewModel: TicketCellViewModel? {
         didSet {
             titleLabel.text = ticketCellViewModel?.title
             imgView.image = UIImage(named: ticketCellViewModel?.imageName ?? "")
@@ -33,9 +30,7 @@ class TicketsTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
         showTicketButton.radiusWithBorder(cornerRadius: 10, borderWidth: 1, hexColor: "#027C71")
-
     }
 
 }

@@ -49,7 +49,6 @@
 		196FE13D24C28BBE000A8A67 /* RequestDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 196FE13B24C28BBE000A8A67 /* RequestDataTableViewCell.xib */; };
 		19C548E224C0B24F00942D54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C548E124C0B24F00942D54 /* AppDelegate.swift */; };
 		19C548E424C0B24F00942D54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C548E324C0B24F00942D54 /* SceneDelegate.swift */; };
-		19C548E624C0B24F00942D54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C548E524C0B24F00942D54 /* ViewController.swift */; };
 		19C548E924C0B24F00942D54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C548E724C0B24F00942D54 /* Main.storyboard */; };
 		19C548EB24C0B25800942D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19C548EA24C0B25800942D54 /* Assets.xcassets */; };
 		19C548EE24C0B25800942D54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C548EC24C0B25800942D54 /* LaunchScreen.storyboard */; };
@@ -99,7 +98,6 @@
 		19C548DE24C0B24F00942D54 /* WidgetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WidgetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C548E124C0B24F00942D54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19C548E324C0B24F00942D54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		19C548E524C0B24F00942D54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		19C548E824C0B24F00942D54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		19C548EA24C0B25800942D54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19C548ED24C0B25800942D54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -206,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				195724CA24C38D330003A425 /* ActivityCustomCells */,
-				19C548E524C0B24F00942D54 /* ViewController.swift */,
 				196FE11A24C1CBD9000A8A67 /* RequestsViewController.swift */,
 				195724C624C330530003A425 /* RequestDetailsViewController.swift */,
 				195724C924C330B90003A425 /* RequestTableViewCell */,
@@ -373,7 +370,6 @@
 				196FE13824C286A1000A8A67 /* RequestFooterTableViewCell.swift in Sources */,
 				196FE13C24C28BBE000A8A67 /* RequestDataTableViewCell.swift in Sources */,
 				195724ED24C3D2590003A425 /* EventsTableViewCell.swift in Sources */,
-				19C548E624C0B24F00942D54 /* ViewController.swift in Sources */,
 				196FE12224C1D8BA000A8A67 /* APIService.swift in Sources */,
 				195724F424C3D6B40003A425 /* UITableViewCellExt.swift in Sources */,
 				196FE12C24C1EFC0000A8A67 /* RequestCellViewModel.swift in Sources */,

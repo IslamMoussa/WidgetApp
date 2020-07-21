@@ -12,9 +12,6 @@ class RequestsViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-    //var requests: [RequestModel] = [RequestModel]()
-
     lazy var viewModel: RequestsViewModel = {
         return RequestsViewModel()
     }()
@@ -30,9 +27,12 @@ class RequestsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
 
-        tableView.register(UINib(nibName: "RequestDataTableViewCell", bundle: nil), forCellReuseIdentifier: "RequestDataCell")
-        tableView.register(UINib(nibName: "RequesHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "RequestHeaderCell")
-        tableView.register(UINib(nibName: "RequestFooterTableViewCell", bundle: nil), forCellReuseIdentifier: "RequestFooterCell")
+        tableView.register(UINib(nibName: "RequestDataTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "RequestDataCell")
+        tableView.register(UINib(nibName: "RequesHeaderTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "RequestHeaderCell")
+        tableView.register(UINib(nibName: "RequestFooterTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "RequestFooterCell")
 
         let backItem = UIBarButtonItem()
         backItem.title = "My Requests"
@@ -41,7 +41,6 @@ class RequestsViewController: UIViewController {
     }
 
     func initVM() {
-
         viewModel.updateLoadingStatus = { [weak self] () in
             guard let self = self else {
                 return
@@ -89,12 +88,14 @@ class RequestsViewController: UIViewController {
 
 }
 
-extension RequestsViewController:UITableViewDelegate, UITableViewDataSource {
+extension RequestsViewController: UITableViewDelegate, UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RequestDataCell", for: indexPath) as? RequestDataTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RequestDataCell", for: indexPath)
+            as? RequestDataTableViewCell else {
             fatalError("Cell not exists in storyboard")
         }        
-        let cellVM = viewModel.getCellViewModel( at: indexPath.section ).trackingData[indexPath.row]
+        let cellVM = viewModel.getCellViewModel(at: indexPath.section ).trackingData[indexPath.row]
         //cell.requestCellViewModel = cellVM
         cell.titleLabel?.text = cellVM.title
         cell.dateLabel?.text = cellVM.date
@@ -116,7 +117,8 @@ extension RequestsViewController:UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RequestHeaderCell") as? RequesHeaderTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RequestHeaderCell")
+            as? RequesHeaderTableViewCell else {
             fatalError("Cell not exists in storyboard")
         }
 
@@ -131,7 +133,8 @@ extension RequestsViewController:UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RequestFooterCell") as? RequestFooterTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RequestFooterCell")
+            as? RequestFooterTableViewCell else {
             fatalError("Cell not exists in storyboard")
         }
         let request=viewModel.getCellViewModel(at: section)
@@ -169,6 +172,7 @@ extension RequestsViewController:UITableViewDelegate, UITableViewDataSource {
 
 
 extension RequestsViewController {
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? RequestDetailsViewController,
             let request = viewModel.selectedRequest {
@@ -177,5 +181,3 @@ extension RequestsViewController {
         }
     }
 }
-
-

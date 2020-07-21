@@ -10,22 +10,17 @@ import UIKit
 
 class WeatherCollectionViewCell: UICollectionViewCell {
 
-
     @IBOutlet var degreeLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
-    
     @IBOutlet var weatherImgView: UIImageView!
-    
-    var weatherDataViewModel : WeatherDataViewModel? {
+    var weatherDataViewModel: WeatherDataViewModel? {
         didSet {
-            //print(degreeLabel)
             degreeLabel.text = weatherDataViewModel?.degree
             timeLabel.text =  weatherDataViewModel?.time
             weatherImgView.image = UIImage(named: weatherDataViewModel?.imageName ?? "")
 
         }
     }
-
 
     override func awakeFromNib() {
         super.awakeFromNib()
