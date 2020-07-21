@@ -1,0 +1,197 @@
+{
+"Activities": [
+           {
+           "title": "Reservation of Trade Name",
+           "referencenumber": "87345",
+           "submittedDate": "10 Sep 2020 | 5:00 PM",
+           "investor": "Theodore Foster",
+           "applicantName": "Luis Austin",
+           "email": "Email@company.com",
+           "mobilenumber": "971343476543",
+           "legalType": "In hac habit.",
+           "licenseType": "Lorem ipsum.",
+           "description": "Site inspection appointment",
+           "dateTime": "13 Sep 2020, 09:30 pm",
+           "locationTxt": "35th Street, Al Wasl Road, Dubai.",
+           "remarks": "Please meet engineer Ahmed at the site on time",
+           "expiryDate": "13 Sep 2020",
+           "trackingData":[
+               {"title": "License Details",
+               "date": "13 Sep 2020 | 5:00 PM",
+                   "status":"1"},
+               {"title": "Verification",
+               "date": "13 Sep 2020 | 5:00 PM",
+                   "status":"1"}
+           ]
+           },
+
+           {
+           "title": "Reservation of Trade Name",
+           "referencenumber": "87345",
+           "submittedDate": "10 Sep 2020 | 5:00 PM",
+           "investor": "Theodore Foster",
+           "applicantName": "Luis Austin",
+           "email": "Email@company.com",
+           "mobilenumber": "971343476543",
+           "legalType": "In hac habit.",
+           "licenseType": "Lorem ipsum.",
+           "description": "Site inspection appointment",
+           "dateTime": "13 Sep 2020, 09:30 pm",
+           "locationTxt": "35th Street, Al Wasl Road, Dubai.",
+           "remarks": "Please meet engineer Ahmed at the site on time",
+           "expiryDate": "13 Sep 2020",
+           "trackingData":[
+               {"title": "License Details",
+               "date": "13 Sep 2020 | 5:00 PM",
+                   "status":"1"},
+               {"title": "Verification",
+               "date": "13 Sep 2020 | 5:00 PM",
+                   "status":"1"},
+               {"title": "Payment",
+               "date": "13 Sep 2020 | 5:00 PM",
+                   "status":"0"}
+           ]
+           },
+
+           {
+           "title": "Reservation of Trade Name",
+           "referencenumber": "87345",
+           "submittedDate": "10 Sep 2020 | 5:00 PM",
+           "investor": "Theodore Foster",
+           "applicantName": "Luis Austin",
+           "email": "Email@company.com",
+           "mobilenumber": "971343476543",
+           "legalType": "In hac habit.",
+           "licenseType": "Lorem ipsum.",
+           "description": "Site inspection appointment",
+           "dateTime": "13 Sep 2020, 09:30 pm",
+           "locationTxt": "35th Street, Al Wasl Road, Dubai.",
+           "remarks": "Please meet engineer Ahmed at the site on time",
+           "expiryDate": "13 Sep 2020",
+           "trackingData":[
+               {"title": "License Details",
+               "date": "13 Sep 2020 | 5:00 PM",
+                   "status":"1"},
+               {"title": "Verification",
+               "date": "13 Sep 2020 | 5:00 PM",
+                   "status":"1"},
+               {"title": "Payment",
+               "date": "13 Sep 2020 | 5:00 PM",
+                   "status":"0"}
+           ]
+           },
+
+           {
+           "title": "Reservation of Trade Name",
+           "referencenumber": "87345",
+           "submittedDate": "10 Sep 2020 | 5:00 PM",
+           "investor": "Theodore Foster",
+           "applicantName": "Luis Austin",
+           "email": "Email@company.com",
+           "mobilenumber": "971343476543",
+           "legalType": "In hac habit.",
+           "licenseType": "Lorem ipsum.",
+           "description": "Site inspection appointment",
+           "dateTime": "13 Sep 2020, 09:30 pm",
+           "locationTxt": "35th Street, Al Wasl Road, Dubai.",
+           "remarks": "Please meet engineer Ahmed at the site on time",
+           "expiryDate": "13 Sep 2020",
+           "trackingData":[
+               {"title": "License Details",
+               "date": "13 Sep 2020 | 5:00 PM",
+                   "status":"1"},
+               {"title": "Verification",
+               "date": "13 Sep 2020 | 5:00 PM",
+                   "status":"1"},
+               {"title": "Payment",
+               "date": "13 Sep 2020 | 5:00 PM",
+                   "status":"0"}
+           ]
+           },
+
+           {
+           "title": "Reservation of Trade Name",
+           "referencenumber": "87345",
+           "submittedDate": "10 Sep 2020 | 5:00 PM",
+           "investor": "Theodore Foster",
+           "applicantName": "Luis Austin",
+           "email": "Email@company.com",
+           "mobilenumber": "971343476543",
+           "legalType": "In hac habit.",
+           "licenseType": "Lorem ipsum.",
+           "description": "Site inspection appointment",
+           "dateTime": "13 Sep 2020, 09:30 pm",
+           "locationTxt": "35th Street, Al Wasl Road, Dubai.",
+           "remarks": "Please meet engineer Ahmed at the site on time",
+           "expiryDate": "13 Sep 2020",
+           "trackingData":[
+               {"title": "License Details",
+               "date": "13 Sep 2020 | 5:00 PM",
+                   "status":"1"},
+               {"title": "Verification",
+               "date": "13 Sep 2020 | 5:00 PM",
+                   "status":"1"},
+               {"title": "Payment",
+               "date": "13 Sep 2020 | 5:00 PM",
+                   "status":"0"}
+           ]
+           },
+
+           {
+           "title": "Reservation of Trade Name",
+           "referencenumber": "87345",
+           "submittedDate": "10 Sep 2020 | 5:00 PM",
+           "investor": "Theodore Foster",
+           "applicantName": "Luis Austin",
+           "email": "Email@company.com",
+           "mobilenumber": "971343476543",
+           "legalType": "In hac habit.",
+           "licenseType": "Lorem ipsum.",
+           "description": "Site inspection appointment",
+           "dateTime": "13 Sep 2020, 09:30 pm",
+           "locationTxt": "35th Street, Al Wasl Road, Dubai.",
+           "remarks": "Please meet engineer Ahmed at the site on time",
+           "expiryDate": "13 Sep 2020",
+           "trackingData":[
+               {"title": "License Details",
+               "date": "13 Sep 2020 | 5:00 PM",
+                   "status":"1"},
+               {"title": "Verification",
+               "date": "13 Sep 2020 | 5:00 PM",
+                   "status":"1"},
+               {"title": "Payment",
+               "date": "13 Sep 2020 | 5:00 PM",
+                   "status":"0"}
+           ]
+           },
+
+           {
+           "title": "Reservation of Trade Name",
+           "referencenumber": "87345",
+           "submittedDate": "10 Sep 2020 | 5:00 PM",
+           "investor": "Theodore Foster",
+           "applicantName": "Luis Austin",
+           "email": "Email@company.com",
+           "mobilenumber": "971343476543",
+           "legalType": "In hac habit.",
+           "licenseType": "Lorem ipsum.",
+           "description": "Site inspection appointment",
+           "dateTime": "13 Sep 2020, 09:30 pm",
+           "locationTxt": "35th Street, Al Wasl Road, Dubai.",
+           "remarks": "Please meet engineer Ahmed at the site on time",
+           "expiryDate": "13 Sep 2020",
+           "trackingData":[
+               {"title": "License Details",
+               "date": "13 Sep 2020 | 5:00 PM",
+                   "status":"1"},
+               {"title": "Verification",
+               "date": "13 Sep 2020 | 5:00 PM",
+                   "status":"1"},
+               {"title": "Payment",
+               "date": "13 Sep 2020 | 5:00 PM",
+                   "status":"0"}
+           ]
+           },
+
+           ]
+}
