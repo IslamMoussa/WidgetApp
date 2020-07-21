@@ -15,25 +15,25 @@ enum APIError: String, Error {
 }
 
 protocol APIServiceProtocol {
-    func fetchRequests( complete: @escaping ( _ success: Bool, _ requests: [RequestModel], _ error: APIError? )-> Void)
+    func fetchRequests( complete: @escaping ( _ success: Bool, _ requests: [RequestModel], _ error: APIError? ) -> Void)
 
-    func fetchActivities( complete: @escaping ( _ success: Bool, _ activities: [Activity], _ error: APIError? )-> Void)
+    func fetchActivities( complete: @escaping ( _ success: Bool, _ activities: [Activity], _ error: APIError? ) -> Void)
 }
 
 class APIService: APIServiceProtocol {
     // Simulate a long waiting for fetching
-    func fetchRequests( complete: @escaping ( _ success: Bool, _ requests: [RequestModel], _ error: APIError?)-> Void) {
+    func fetchRequests( complete: @escaping ( _ success: Bool, _ requests: [RequestModel], _ error: APIError?) -> Void) {
         DispatchQueue.global().async {
             sleep(3)
             let path = Bundle.main.path(forResource: "content", ofType: "json")!
             let data = try! Data(contentsOf: URL(fileURLWithPath: path))
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
-            do{
+            do {
                 let requests = try decoder.decode(Requests.self, from: data)
                 complete(true, requests.requests, nil)
             }
-            catch{}
+            catch { }
         }
     }
 

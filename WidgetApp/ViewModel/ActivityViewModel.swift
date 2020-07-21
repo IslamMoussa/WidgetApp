@@ -27,8 +27,8 @@ class ActivityViewModel {
     }
 
 
-    var reloadTableViewClosure: (()-> Void)?
-    var updateLoadingStatus: (()-> Void)?
+    var reloadTableViewClosure: (() -> Void)?
+    var updateLoadingStatus: (() -> Void)?
 
     init( apiService: APIServiceProtocol = APIService()) {
         self.apiService = apiService
@@ -75,14 +75,14 @@ class ActivityViewModel {
     }
 
     func getUtilityHeaderCellViewModel(index: Int ) -> UtilityHeaderViewModel? {
-        if let utility = activities[index] as? Utility{
+        if let utility = activities[index] as? Utility {
             return UtilityHeaderViewModel(titleText: utility.title, imageName: utility.imageName, totalBillsText: utility.totalBills, totalDuesText: utility.totalDues)
         }
         return nil
     }
 
     func getmyRequestsHeaderCellViewModel(index: Int ) -> MyRequestHeaderCellViewModel? {
-        if let request = activities[index] as? Request{
+        if let request = activities[index] as? Request {
             return MyRequestHeaderCellViewModel(titleText: request.title, imageName: request.imageName,
                                                 pendingRequestsText: String(request.pendingRequests))
         }
@@ -96,7 +96,7 @@ class ActivityViewModel {
     }
 
     func getUtilityCellViewModel(indexPath: IndexPath ) -> UtilityCellViewModel? {
-        if let utility = activities[indexPath.section] as? Utility{
+        if let utility = activities[indexPath.section] as? Utility {
             let d = utility.data[indexPath.row]
             return UtilityCellViewModel(titleText: d.title, dateText: d.dateTxt, priceText: d.priceTxt)
         }
@@ -104,7 +104,7 @@ class ActivityViewModel {
     }
 
     func getUtilityCellViewModel2(indexPath: IndexPath ) -> UtilityCellViewModel2? {
-        if let utility = activities[indexPath.section] as? Utility{
+        if let utility = activities[indexPath.section] as? Utility {
             var vms : [UtilityCellViewModel]=[]
             for item in utility.data {
                 vms.append( UtilityCellViewModel(titleText: item.title, dateText: item.dateTxt, priceText: item.priceTxt))
@@ -117,7 +117,7 @@ class ActivityViewModel {
     }
 
     func getEventCellViewModel(indexPath: IndexPath ) -> EventCellViewModel? {
-        if let event = activities[indexPath.section] as? Event{
+        if let event = activities[indexPath.section] as? Event {
             let d = event.data[0]
             return EventCellViewModel(headerTitleText: event.title, headerImageName: event.imageName,
                                       title: d.title, dateTxt: d.dateTxt, imageName: d.imageName)
@@ -126,7 +126,7 @@ class ActivityViewModel {
     }
 
     func getTicketCellViewModel(indexPath: IndexPath ) -> TicketCellViewModel? {
-        if let ticket = activities[indexPath.section] as? Ticket{
+        if let ticket = activities[indexPath.section] as? Ticket {
             let d = ticket.data[0]
             return TicketCellViewModel(headerTitleText: ticket.title, headerImageName: ticket.imageName,
                                        title: d.title, dateTxt: d.dateTxt, imageName: d.imageName)
@@ -136,7 +136,7 @@ class ActivityViewModel {
 
 
     func getWeatherCellViewModel(indexPath: IndexPath ) -> WeatherCellViewModel? {
-        if let weather = activities[indexPath.section] as? Weather{
+        if let weather = activities[indexPath.section] as? Weather {
             var vms: [WeatherDataViewModel]=[]
             for item in weather.data {
                 vms.append( WeatherDataViewModel(time: item.time, imageName: item.imageName, degree: item.degree))
@@ -152,7 +152,7 @@ class ActivityViewModel {
 
 
 
-    func moveSection(source: Int, destination: Int )  {
+    func moveSection(source: Int, destination: Int ) {
         let movedObject = activities[source]
         activities.remove(at: source)
         activities.insert(movedObject, at: destination)

@@ -55,7 +55,7 @@ struct UtilityCellViewModel2 {
     let totalDuesText: String
     let dataCellViewmodel: [UtilityCellViewModel]
     var showMore: Bool = false
-    var reloadParentTableViewClosure: (()-> Void)?
+    var reloadParentTableViewClosure: (() -> Void)?
 
     func reloadParentTV()  {
         self.reloadParentTableViewClosure?()

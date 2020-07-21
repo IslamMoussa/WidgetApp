@@ -40,10 +40,10 @@ class RequestsViewModel {
 
     var selectedRequest: RequestCellViewModel?
 
-    var reloadTableViewClosure: (()-> Void)?
-    var showAlertClosure: (()-> Void)?
-    var updateLoadingStatus: (()-> Void)?
-    var goToRequestDetailsClosure: ((_ selectedRequest: RequestCellViewModel)->())?
+    var reloadTableViewClosure: (() -> Void)?
+    var showAlertClosure: (() -> Void)?
+    var updateLoadingStatus: (() -> Void)?
+    var goToRequestDetailsClosure: ((_ selectedRequest: RequestCellViewModel) -> Void)?
 
     init( apiService: APIServiceProtocol = APIService()) {
         self.apiService = apiService
