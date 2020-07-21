@@ -28,7 +28,6 @@ class ActivityViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isEditing = true
-        
         tableView.register(UINib(nibName: "UtilitiesTableViewCell2", bundle: nil),
                            forCellReuseIdentifier: "UtilityCell2")
         tableView.register(UINib(nibName: "RequestHeaderTableViewCell", bundle: nil),
@@ -198,7 +197,6 @@ extension ActivityViewController {
         fatalError("Cell not exists in storyboard")}
        return cell
     }
-
 
     func getWeatherCell(indexPath: IndexPath ) -> WeatherTableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherViewCell", for: indexPath)

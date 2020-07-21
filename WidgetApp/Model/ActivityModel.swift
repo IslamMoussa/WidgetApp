@@ -15,7 +15,7 @@ protocol Activity: Codable {
     var rowsCount: Int { get }
 }
 
-class Utility: Activity  {
+class Utility: Activity {
     var rowsCount: Int
     var type: String = ActivityType.utilities.rawValue
     var title: String

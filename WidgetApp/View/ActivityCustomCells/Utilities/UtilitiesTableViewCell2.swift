@@ -58,7 +58,7 @@ extension UtilitiesTableViewCell2 {
 
 }
 
-extension UtilitiesTableViewCell2:  UITableViewDelegate, UITableViewDataSource {
+extension UtilitiesTableViewCell2: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items?.count ?? 0
     }
@@ -93,7 +93,6 @@ extension UtilitiesTableViewCell2:  UITableViewDelegate, UITableViewDataSource {
 }
 
 extension UtilitiesTableViewCell2 {
-
     func getUtilityCell(indexPath: IndexPath ) -> UtilitiesTableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UtilitiesCell", for: indexPath)
             as? UtilitiesTableViewCell else {

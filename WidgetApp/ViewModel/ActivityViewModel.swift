@@ -52,7 +52,7 @@ class ActivityViewModel {
     }
 
     func numberOfRowsOfSectionOfType(type: ActivityType ) -> Int {
-        if let section = findActivityByType(value: type.rawValue, in: activities){
+        if let section = findActivityByType(value: type.rawValue, in: activities) {
             return section.rowsCount
         }
         return 0
@@ -176,4 +176,3 @@ class ActivityViewModel {
         return nil
     }
 }
-
