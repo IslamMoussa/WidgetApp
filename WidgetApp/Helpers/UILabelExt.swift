@@ -37,18 +37,12 @@ extension UILabel {
             return false
         }
         UIGraphicsPushContext(context)
-        let glossGradient: CGGradient?
-        let rgbColorspace: CGColorSpace?
-        let numLocations: size_t = 2
         let locations: [CGFloat] = [ 0.0, 1.0 ]
         let components: [CGFloat] = [startColorRed, startColorGreen, startColorBlue, startAlpha,
                                      endColorRed, endColorGreen, endColorBlue, endAlpha]
-        rgbColorspace = CGColorSpaceCreateDeviceRGB()
-        glossGradient = CGGradient(colorSpace: rgbColorspace!, colorComponents: components,
-                                   locations: locations, count: numLocations)
-        let topCenter = CGPoint.zero
-        let bottomCenter = CGPoint(x: 0, y: textSize.height)
-        context.drawLinearGradient(glossGradient!, start: topCenter, end: bottomCenter,
+        let glossGradient = CGGradient(colorSpace: CGColorSpaceCreateDeviceRGB(), colorComponents: components,
+                                   locations: locations, count: 2)
+        context.drawLinearGradient(glossGradient!, start: CGPoint.zero, end: CGPoint(x: 0, y: textSize.height),
                                    options: CGGradientDrawingOptions.drawsBeforeStartLocation)
         UIGraphicsPopContext()
         guard let gradientImage = UIGraphicsGetImageFromCurrentImageContext() else {
