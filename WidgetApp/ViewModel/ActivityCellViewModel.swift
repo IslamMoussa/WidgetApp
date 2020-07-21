@@ -65,14 +65,10 @@ struct UtilityCellViewModel2 {
         var items: [UtilityCellViewModel] = []
         var ind: Int = 0
         let arr = dataCellViewmodel
-        for item in arr {
-            if ind >= max {
-                break
-            }
+        for item in arr where ind < max {
             items.append(item)
             ind+=1
         }
-
         return items
     }
 }

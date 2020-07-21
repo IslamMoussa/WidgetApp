@@ -68,7 +68,6 @@ extension UtilitiesTableViewCell2:  UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = getUtilityCell(indexPath: indexPath)
         cell.utilityCellViewModel = utilityCellViewModel?.dataCellViewmodel[indexPath.row]
         return cell

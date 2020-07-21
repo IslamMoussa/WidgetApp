@@ -19,7 +19,7 @@ class WeatherTableViewCell: UITableViewCell {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var weatherLabel: UILabel!
 
-    var weatherCellViewModel : WeatherCellViewModel? {
+    var weatherCellViewModel: WeatherCellViewModel? {
         didSet {
             headerTitleLabel.text = weatherCellViewModel?.titleText
             headerImageView.image = UIImage(named: weatherCellViewModel?.imageName ?? "")
@@ -57,7 +57,8 @@ extension WeatherTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
        return weatherCellViewModel?.weatherDataCellViewmodel.count ?? 0
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = getWeatherCell(indexPath: indexPath)
         cell.weatherDataViewModel = weatherCellViewModel?.weatherDataCellViewmodel[indexPath.row]
         return cell

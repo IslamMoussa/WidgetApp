@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class ActivityViewModel {
 
     let apiService: APIServiceProtocol
@@ -26,7 +25,6 @@ class ActivityViewModel {
         return activities.count
     }
 
-
     var reloadTableViewClosure: (() -> Void)?
     var updateLoadingStatus: (() -> Void)?
 
@@ -36,7 +34,7 @@ class ActivityViewModel {
 
     func initFetch() {
         state = .loading
-        apiService.fetchActivities { [weak self] (success, activities , error) in
+        apiService.fetchActivities { [weak self] (_, activities, error) in
             print(activities)
             guard let self = self else {
                 return
@@ -53,8 +51,6 @@ class ActivityViewModel {
         }
     }
 
-
-
     func numberOfRowsOfSectionOfType(type: ActivityType ) -> Int {
         if let section = findActivityByType(value: type.rawValue, in: activities){
             return section.rowsCount
@@ -68,7 +64,7 @@ class ActivityViewModel {
     }
 
     func getSectionType(index: Int ) -> ActivityType? {
-        if let type = ActivityType(rawValue: activities[index].type){
+        if let type = ActivityType(rawValue: activities[index].type) {
             return type
         }
         return nil
@@ -99,15 +95,15 @@ class ActivityViewModel {
 
     func getUtilityCellViewModel(indexPath: IndexPath ) -> UtilityCellViewModel? {
         if let utility = activities[indexPath.section] as? Utility {
-            let d = utility.data[indexPath.row]
-            return UtilityCellViewModel(titleText: d.title, dateText: d.dateTxt, priceText: d.priceTxt)
+            let data = utility.data[indexPath.row]
+            return UtilityCellViewModel(titleText: data.title, dateText: data.dateTxt, priceText: data.priceTxt)
         }
         return nil
     }
 
     func getUtilityCellViewModel2(indexPath: IndexPath ) -> UtilityCellViewModel2? {
         if let utility = activities[indexPath.section] as? Utility {
-            var vms : [UtilityCellViewModel]=[]
+            var vms: [UtilityCellViewModel]=[]
             for item in utility.data {
                 vms.append( UtilityCellViewModel(titleText: item.title,
                                                  dateText: item.dateTxt, priceText: item.priceTxt))
@@ -122,22 +118,21 @@ class ActivityViewModel {
 
     func getEventCellViewModel(indexPath: IndexPath ) -> EventCellViewModel? {
         if let event = activities[indexPath.section] as? Event {
-            let d = event.data[0]
+            let data = event.data[0]
             return EventCellViewModel(headerTitleText: event.title, headerImageName: event.imageName,
-                                      title: d.title, dateTxt: d.dateTxt, imageName: d.imageName)
+                                      title: data.title, dateTxt: data.dateTxt, imageName: data.imageName)
         }
         return nil
     }
 
     func getTicketCellViewModel(indexPath: IndexPath ) -> TicketCellViewModel? {
         if let ticket = activities[indexPath.section] as? Ticket {
-            let d = ticket.data[0]
+            let data = ticket.data[0]
             return TicketCellViewModel(headerTitleText: ticket.title, headerImageName: ticket.imageName,
-                                       title: d.title, dateTxt: d.dateTxt, imageName: d.imageName)
+                                       title: data.title, dateTxt: data.dateTxt, imageName: data.imageName)
         }
         return nil
     }
-
 
     func getWeatherCellViewModel(indexPath: IndexPath ) -> WeatherCellViewModel? {
         if let weather = activities[indexPath.section] as? Weather {
@@ -156,9 +151,6 @@ class ActivityViewModel {
         return nil
     }
 
-
-
-
     func moveSection(source: Int, destination: Int ) {
         let movedObject = activities[source]
         activities.remove(at: source)
@@ -166,18 +158,7 @@ class ActivityViewModel {
         self.reloadTableViewClosure?()
     }
 
-
-
-
-
-
-
-
-
-    
-
     private func processFetchedActivities( activities: [Activity] ) {
-
         self.activities = activities // Cache
         self.reloadTableViewClosure?()
 
@@ -188,19 +169,11 @@ class ActivityViewModel {
         //self.cellViewModels = vms
     }
 
-    func findActivityByType(value searchValue: String, in array: [Activity]) -> Activity?
-    {
-        for item in array
-        {
-            if item.type == searchValue {
-                return item
-            }
+    func findActivityByType(value searchValue: String, in array: [Activity]) -> Activity? {
+        for item in array where item.type == searchValue {
+            return item
         }
-
         return nil
     }
-
 }
-
-
 

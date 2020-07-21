@@ -92,7 +92,6 @@ extension RequestsViewController: UITableViewDelegate, UITableViewDataSource {
             as? RequestDataTableViewCell else {
             fatalError("Cell not exists in storyboard")
         }
-        
         let cellVM = viewModel.getCellViewModel(at: indexPath.section ).trackingData[indexPath.row]
         //cell.requestCellViewModel = cellVM
         cell.titleLabel?.text = cellVM.title

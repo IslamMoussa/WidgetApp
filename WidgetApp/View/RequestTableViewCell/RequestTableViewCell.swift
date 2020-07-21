@@ -19,5 +19,4 @@ class RequestTableViewCell: UITableViewCell {
             //submittedDateLabel.text = requestCellViewModel?.submittedDateText
         }
     }
-
 }
