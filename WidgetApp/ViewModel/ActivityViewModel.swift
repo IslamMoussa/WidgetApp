@@ -76,7 +76,9 @@ class ActivityViewModel {
 
     func getUtilityHeaderCellViewModel(index: Int ) -> UtilityHeaderViewModel? {
         if let utility = activities[index] as? Utility {
-            return UtilityHeaderViewModel(titleText: utility.title, imageName: utility.imageName, totalBillsText: utility.totalBills, totalDuesText: utility.totalDues)
+            return UtilityHeaderViewModel(titleText: utility.title, imageName: utility.imageName,
+                                          totalBillsText: utility.totalBills,
+                                          totalDuesText: utility.totalDues)
         }
         return nil
     }
@@ -107,11 +109,13 @@ class ActivityViewModel {
         if let utility = activities[indexPath.section] as? Utility {
             var vms : [UtilityCellViewModel]=[]
             for item in utility.data {
-                vms.append( UtilityCellViewModel(titleText: item.title, dateText: item.dateTxt, priceText: item.priceTxt))
+                vms.append( UtilityCellViewModel(titleText: item.title,
+                                                 dateText: item.dateTxt, priceText: item.priceTxt))
             }
 
             return UtilityCellViewModel2(titleText: utility.title, imageName: utility.imageName,
-                                         totalBillsText: utility.totalBills, totalDuesText: utility.totalDues, dataCellViewmodel:vms)
+                                         totalBillsText: utility.totalBills,
+                                         totalDuesText: utility.totalDues, dataCellViewmodel:vms)
         }
         return nil
     }
@@ -139,12 +143,15 @@ class ActivityViewModel {
         if let weather = activities[indexPath.section] as? Weather {
             var vms: [WeatherDataViewModel]=[]
             for item in weather.data {
-                vms.append( WeatherDataViewModel(time: item.time, imageName: item.imageName, degree: item.degree))
+                vms.append( WeatherDataViewModel(time: item.time,
+                                                 imageName: item.imageName, degree: item.degree))
             }
 
             return WeatherCellViewModel(titleText: weather.title, imageName: weather.imageName,
-                                        degree: weather.degree, day: weather.day, weatherImageName: weather.weatherImageName,
-                                        location: weather.location, weatherText: weather.weatherText, weatherDataCellViewmodel: vms)
+                                        degree: weather.degree, day: weather.day,
+                                        weatherImageName: weather.weatherImageName,
+                                        location: weather.location, weatherText: weather.weatherText,
+                                        weatherDataCellViewmodel: vms)
         }
         return nil
     }

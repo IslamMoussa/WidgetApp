@@ -15,14 +15,17 @@ enum APIError: String, Error {
 }
 
 protocol APIServiceProtocol {
-    func fetchRequests( complete: @escaping ( _ success: Bool, _ requests: [RequestModel], _ error: APIError? ) -> Void)
+    func fetchRequests( complete: @escaping ( _ success: Bool, _ requests: [RequestModel],
+        _ error: APIError? ) -> Void)
 
-    func fetchActivities( complete: @escaping ( _ success: Bool, _ activities: [Activity], _ error: APIError? ) -> Void)
+    func fetchActivities( complete: @escaping ( _ success: Bool, _ activities: [Activity],
+        _ error: APIError? ) -> Void)
 }
 
 class APIService: APIServiceProtocol {
     // Simulate a long waiting for fetching
-    func fetchRequests( complete: @escaping ( _ success: Bool, _ requests: [RequestModel], _ error: APIError?) -> Void) {
+    func fetchRequests( complete: @escaping ( _ success: Bool, _ requests: [RequestModel],
+        _ error: APIError?) -> Void) {
         DispatchQueue.global().async {
             sleep(3)
             let path = Bundle.main.path(forResource: "content", ofType: "json")!
@@ -37,13 +40,16 @@ class APIService: APIServiceProtocol {
         }
     }
 
-    func fetchActivities( complete: @escaping ( _ success: Bool, _ activities: [Activity], _ error: APIError?)-> Void) {
+    func fetchActivities( complete: @escaping ( _ success: Bool, _ activities: [Activity],
+        _ error: APIError?)-> Void) {
         DispatchQueue.global().async {
             //sleep(2)
 
             let activities: [Activity] = [
-                Utility(title: "Utilities & Bills", imageName: "Group 7", totalBills: "1,200 AED", totalDues: "950 AED",
-                        data: [UtilityRow(title: "SEWA Bill", dateTxt: "Due: 28 Jul 2020", priceTxt: "400 AED"),
+                Utility(title: "Utilities & Bills", imageName: "Group 7",
+                        totalBills: "1,200 AED", totalDues: "950 AED",
+                        data: [UtilityRow(title: "SEWA Bill",
+                                          dateTxt: "Due: 28 Jul 2020", priceTxt: "400 AED"),
                 UtilityRow(title: "SEWA Bill", dateTxt: "Due: 28 Jul 2020", priceTxt: "400 AED"),
                 UtilityRow(title: "SEWA Bill", dateTxt: "Due: 28 Jul 2020", priceTxt: "400 AED"),
                 UtilityRow(title: "SEWA Bill", dateTxt: "Due: 28 Jul 2020", priceTxt: "400 AED"),
@@ -64,11 +70,13 @@ class APIService: APIServiceProtocol {
                                  dateTxt: "14 Sep - 18 Sep | 9:00 AM", imageName: "img1")
                 ]),
                 Ticket(title: "Tickets", imageName: "Group 9", data: [
-                        TicketRow(title: "Rainroom", dateTxt: "14 Sep - 18 Sep | 9:00 AM", imageName: "img2")
+                        TicketRow(title: "Rainroom", dateTxt: "14 Sep - 18 Sep | 9:00 AM",
+                                  imageName: "img2")
                 ]),
 
                 Weather(title: "Weather", imageName: "Group 8", degree: "22", day: "Friday",
-                        weatherImageName: "sunny", location: "Sharjah", weatherText: "Mostly Clear", data: [
+                        weatherImageName: "sunny", location: "Sharjah",
+                        weatherText: "Mostly Clear", data: [
                     WeatherRow(time: "5 PM", imageName: "sunny", degree: "22"),
                     WeatherRow(time: "6 PM", imageName: "cloudy1", degree: "22"),
                     WeatherRow(time: "7 PM", imageName: "cloudy2", degree: "22"),
