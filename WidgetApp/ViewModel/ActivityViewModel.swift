@@ -70,27 +70,12 @@ class ActivityViewModel {
         return nil
     }
 
-    func getUtilityHeaderCellViewModel(index: Int ) -> UtilityHeaderViewModel? {
-        if let utility = activities[index] as? Utility {
-            return UtilityHeaderViewModel(titleText: utility.title, imageName: utility.imageName,
-                                          totalBillsText: utility.totalBills,
-                                          totalDuesText: utility.totalDues)
-        }
-        return nil
-    }
-
     func getmyRequestsHeaderCellViewModel(index: Int ) -> MyRequestHeaderCellViewModel? {
         if let request = activities[index] as? Request {
             return MyRequestHeaderCellViewModel(titleText: request.title, imageName: request.imageName,
                                                 pendingRequestsText: String(request.pendingRequests))
         }
         return nil
-    }
-
-    func getActivityHeaderCellViewModel(index: Int ) -> ActivityHeaderCellViewModel {
-        let activity = activities[index]
-
-        return ActivityHeaderCellViewModel(titleText: activity.title, imageName: activity.imageName)
     }
 
     func getUtilityCellViewModel(indexPath: IndexPath ) -> UtilityCellViewModel? {

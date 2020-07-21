@@ -14,22 +14,10 @@ struct UtilityCellViewModel {
     let priceText: String
 }
 
-struct UtilityHeaderViewModel {
-    let titleText: String
-    let imageName: String
-    let totalBillsText: String
-    let totalDuesText: String
-}
-
 struct MyRequestHeaderCellViewModel {
     let titleText: String
     let imageName: String
     let pendingRequestsText: String
-}
-
-struct ActivityHeaderCellViewModel {
-    let titleText: String
-    let imageName: String
 }
 
 struct EventCellViewModel {

@@ -72,7 +72,7 @@ extension WeatherTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 
-        cell.alpha = 0.3
+        cell.alpha = 0.5
           UIView.animate(withDuration: 0.8) {
               cell.alpha = 1
           }

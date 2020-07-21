@@ -77,19 +77,14 @@ extension UtilitiesTableViewCell2: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 
         let intTotalrow = tableView.numberOfRows(inSection: indexPath.section)
-        if indexPath.row == intTotalrow - 1 {
-
-            if let utilityCell = cell as? UtilitiesTableViewCell {
-                utilityCell.priceLabel.applyGradientWith(startColor: UIColor(hexString: "#606B77"),
-                                                         endColor: UIColor(hexString: "#B9C3D0"))
-                utilityCell.dateLabel.applyGradientWith(startColor: UIColor(hexString: "#606B77"),
-                                                        endColor: UIColor(hexString: "#B9C3D0"))
-                utilityCell.titleLabel.applyGradientWith(startColor: UIColor(hexString: "#606B77"),
-                                                         endColor: UIColor(hexString: "#B9C3D0"))
+        if let utilityCell = cell as? UtilitiesTableViewCell {
+            if indexPath.row == intTotalrow - 1 {
+                utilityCell.gradientStyle()
+            } else {
+                utilityCell.defaultStyle()
             }
         }
     }
-
 }
 
 extension UtilitiesTableViewCell2 {

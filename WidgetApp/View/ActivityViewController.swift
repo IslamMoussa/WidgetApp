@@ -10,8 +10,8 @@ import UIKit
 
 class ActivityViewController: UIViewController {
 
+    @IBOutlet var buttonReorder: UIButton!
     @IBOutlet var tableView: UITableView!
-
     lazy var viewModel: ActivityViewModel = {
         return ActivityViewModel()
     }()
@@ -23,34 +23,6 @@ class ActivityViewController: UIViewController {
         initUI()
         initVM()
     }
-
-    func initUI() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.isEditing = true
-        tableView.register(UINib(nibName: "UtilitiesTableViewCell2", bundle: nil),
-                           forCellReuseIdentifier: "UtilityCell2")
-        tableView.register(UINib(nibName: "RequestHeaderTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "RequestHeaderCell")
-        tableView.register(UINib(nibName: "TicketsTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "TicketsCell")
-        tableView.register(UINib(nibName: "EventsTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "EventsCell")
-        tableView.register(UINib(nibName: "WeatherTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "WeatherViewCell")
-    }
-
-    func initVM() {
-
-        viewModel.reloadTableViewClosure = { [weak self] () in
-                   DispatchQueue.main.async {
-                       self?.tableView.reloadData()
-                   }
-               }
-
-        viewModel.initFetch()
-    }
-
 }
 
 extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
@@ -118,23 +90,23 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         return .none
     }
 
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell,
-                   forRowAt indexPath: IndexPath) {
-        let imageView = cell.subviews.first(where: { $0.description.contains("Reorder") })?
-            .subviews.first(where: { $0 is UIImageView }) as? UIImageView
-        //imageView?.image = UIImage()
-        //imageView?.contentMode = .top
-        imageView?.isHidden = true
-
-//        var ss = cell.subviews.first(where: { $0.description.contains("Reorder") })
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell,
+//                   forRowAt indexPath: IndexPath) {
+//        let imageView = cell.subviews.first(where: { $0.description.contains("Reorder") })?
+//            .subviews.first(where: { $0 is UIImageView }) as? UIImageView
+//        //imageView?.image = UIImage()
+//        //imageView?.contentMode = .top
+//        //imageView?.isHidden = true
 //
-//        var ff = cell as? EventsTableViewCell
-//        if ff != nil{
-//            ff?.headerEditButton = imageView
-//        }
-//        ss?.removeFromSuperview()
-        cell.showsReorderControl = false
-    }
+////        var ss = cell.subviews.first(where: { $0.description.contains("Reorder") })
+////
+////        var ff = cell as? EventsTableViewCell
+////        if ff != nil{
+////            ff?.headerEditButton = imageView
+////        }
+////        ss?.removeFromSuperview()
+//        //cell.showsReorderControl = false
+//    }
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
 
@@ -157,7 +129,6 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         //self.viewModel.userPressed(at: indexPath)
         return indexPath
     }
-
 }
 
 extension ActivityViewController {
@@ -203,5 +174,43 @@ extension ActivityViewController {
             as? WeatherTableViewCell else {
         fatalError("Cell not exists in storyboard")}
        return cell
+    }
+}
+
+extension ActivityViewController {
+    @IBAction func reorderAction(_ sender: UIButton) {
+        if !tableView.isEditing {
+            tableView.isEditing = true
+            buttonReorder.setImage(UIImage(systemName: "checkmark.rectangle"), for: .normal)
+        } else {
+            tableView.isEditing = false
+            buttonReorder.setImage(UIImage(named: "reorder"), for: .normal)
+        }
+    }
+
+    func initUI() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "UtilitiesTableViewCell2", bundle: nil),
+                           forCellReuseIdentifier: "UtilityCell2")
+        tableView.register(UINib(nibName: "RequestHeaderTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "RequestHeaderCell")
+        tableView.register(UINib(nibName: "TicketsTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "TicketsCell")
+        tableView.register(UINib(nibName: "EventsTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "EventsCell")
+        tableView.register(UINib(nibName: "WeatherTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "WeatherViewCell")
+    }
+
+    func initVM() {
+
+        viewModel.reloadTableViewClosure = { [weak self] () in
+                   DispatchQueue.main.async {
+                       self?.tableView.reloadData()
+                   }
+               }
+
+        viewModel.initFetch()
     }
 }

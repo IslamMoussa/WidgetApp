@@ -21,4 +21,18 @@ class UtilitiesTableViewCell: UITableViewCell {
             dateLabel.text = utilityCellViewModel?.dateText
         }
     }
+    func gradientStyle() {
+        priceLabel.applyGradientWith(startColor: UIColor(hexString: "#606B77"),
+                                     endColor: UIColor(hexString: "#B9C3D0"))
+        dateLabel.applyGradientWith(startColor: UIColor(hexString: "#606B77"),
+                                    endColor: UIColor(hexString: "#B9C3D0"))
+        titleLabel.applyGradientWith(startColor: UIColor(hexString: "#606B77"),
+                                     endColor: UIColor(hexString: "#B9C3D0"))
+    }
+
+    func defaultStyle() {
+        priceLabel.textColor = .black
+        titleLabel.textColor = .systemGray
+        dateLabel.textColor = .systemGray
+    }
 }

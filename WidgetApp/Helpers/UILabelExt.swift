@@ -11,20 +11,20 @@ import UIKit
 
 extension UILabel {
 
-    func applyGradientWith(startColor: UIColor, endColor: UIColor) -> Bool {
+    func applyGradientWith(startColor: UIColor, endColor: UIColor) {
         var startColorRed: CGFloat = 0
         var startColorGreen: CGFloat = 0
         var startColorBlue: CGFloat = 0
         var startAlpha: CGFloat = 0
         if !startColor.getRed(&startColorRed, green: &startColorGreen, blue: &startColorBlue, alpha: &startAlpha) {
-            return false
+            return
         }
         var endColorRed: CGFloat = 0
         var endColorGreen: CGFloat = 0
         var endColorBlue: CGFloat = 0
         var endAlpha: CGFloat = 0
         if !endColor.getRed(&endColorRed, green: &endColorGreen, blue: &endColorBlue, alpha: &endAlpha) {
-            return false
+            return
         }
         let gradientText = self.text ?? ""
         let name: NSAttributedString.Key = NSAttributedString.Key.font
@@ -34,7 +34,7 @@ extension UILabel {
         UIGraphicsBeginImageContext(CGSize(width: width, height: height))
         guard let context = UIGraphicsGetCurrentContext() else {
             UIGraphicsEndImageContext()
-            return false
+            return
         }
         UIGraphicsPushContext(context)
         let locations: [CGFloat] = [ 0.0, 1.0 ]
@@ -47,10 +47,9 @@ extension UILabel {
         UIGraphicsPopContext()
         guard let gradientImage = UIGraphicsGetImageFromCurrentImageContext() else {
             UIGraphicsEndImageContext()
-            return false
+            return
         }
         UIGraphicsEndImageContext()
         self.textColor = UIColor(patternImage: gradientImage)
-        return true
     }
 }
