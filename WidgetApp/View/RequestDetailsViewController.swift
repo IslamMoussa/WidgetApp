@@ -25,12 +25,11 @@ class RequestDetailsViewController: UIViewController {
 
       initUI()
     }
-
 }
 
 extension RequestDetailsViewController {
 
-    func initUI(){
+    func initUI() {
     segmentedControl.setTitleTextAttributes([
         NSAttributedString.Key.font: UIFont(name: "DINCondensed-Bold", size: 18) as Any,
         NSAttributedString.Key.foregroundColor: UIColor.lightGray], for: .normal)
@@ -51,8 +50,6 @@ extension RequestDetailsViewController {
         buttonBar.widthAnchor.constraint(equalTo: segmentedControl.widthAnchor,
                                          multiplier: 1 / CGFloat(segmentedControl.numberOfSegments)).isActive = true
 
-
-
     }
 
    @objc func changeAndRepeat(_ sender: UISegmentedControl) {
@@ -65,17 +62,17 @@ extension RequestDetailsViewController {
     case 0:
         //historyView.isHidden = true
         //popularView.isHidden = false
-        break;
+        break
     case 1:
         //historyView.isHidden = false
         //popularView.isHidden = true
-        break;
+        break
     case 2:
         //historyView.isHidden = false
         //popularView.isHidden = true
-        break;
+        break
     default:
-        break;
+        break
     }
     }
 }

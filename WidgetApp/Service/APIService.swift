@@ -41,7 +41,7 @@ class APIService: APIServiceProtocol {
     }
 
     func fetchActivities( complete: @escaping ( _ success: Bool, _ activities: [Activity],
-        _ error: APIError?)-> Void) {
+        _ error: APIError?) -> Void) {
         DispatchQueue.global().async {
             //sleep(2)
 

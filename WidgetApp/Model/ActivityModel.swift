@@ -52,8 +52,8 @@ class Event: Activity {
     var type: String = ActivityType.events.rawValue
     var title: String
     var imageName: String
-    let data:[EventRow]
-    init(title: String, imageName: String, data:[EventRow]) {
+    let data: [EventRow]
+    init(title: String, imageName: String, data: [EventRow]) {
         self.title=title
         self.imageName=imageName
         self.data=data
@@ -66,7 +66,7 @@ class Ticket: Activity {
     var type: String = ActivityType.tickets.rawValue
     var title: String
     var imageName: String
-    let data:[TicketRow]
+    let data: [TicketRow]
     init(title: String, imageName: String, data: [TicketRow]) {
         self.title=title
         self.imageName=imageName

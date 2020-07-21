@@ -62,11 +62,11 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         switch type {
         case .utilities:
             let cell = getUtilityCell2(indexPath: indexPath)
-            if var utilityVM = viewModel.getUtilityCellViewModel2(indexPath: indexPath){
+            if var utilityVM = viewModel.getUtilityCellViewModel2(indexPath: indexPath) {
                 utilityVM.showMore = self.isExpanded
                 cell.utilityCellViewModel = utilityVM
                 cell.utilityCellViewModel?.reloadParentTableViewClosure = { [weak self] () in
-                    if let expanded = self?.isExpanded{
+                    if let expanded = self?.isExpanded {
                         self?.isExpanded = !expanded
                         self?.tableView.reloadData()
                     }
@@ -114,11 +114,13 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
 
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath)
+        -> UITableViewCell.EditingStyle {
         return .none
     }
 
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath) {
         let imageView = cell.subviews.first(where: { $0.description.contains("Reorder") })?
             .subviews.first(where: { $0 is UIImageView }) as? UIImageView
         //imageView?.image = UIImage()
@@ -144,11 +146,11 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         return false
     }
 
-    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath,
+                   to destinationIndexPath: IndexPath) {
 
         viewModel.moveSection(source: sourceIndexPath.section, destination: destinationIndexPath.section)
     }
-
 
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
 
@@ -159,7 +161,7 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
 
 }
 
-extension ActivityViewController{
+extension ActivityViewController {
 
     func getMyRequestsHeaderCell(section: Int) -> RequestHeaderTableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RequestHeaderCell")

@@ -57,11 +57,11 @@ struct UtilityCellViewModel2 {
     var showMore: Bool = false
     var reloadParentTableViewClosure: (() -> Void)?
 
-    func reloadParentTV()  {
+    func reloadParentTV() {
         self.reloadParentTableViewClosure?()
     }
 
-    func prefixData(max: Int) -> [UtilityCellViewModel]{
+    func prefixData(max: Int) -> [UtilityCellViewModel] {
         var items: [UtilityCellViewModel] = []
         var ind: Int = 0
         let arr = dataCellViewmodel

@@ -40,11 +40,12 @@ class UtilitiesTableViewCell2: UITableViewCell {
 }
 
 extension UtilitiesTableViewCell2 {
-    func initUI(){
+    func initUI() {
         tableView.delegate = self
         tableView.dataSource = self
 
-        tableView.register(UINib(nibName: "UtilitiesTableViewCell", bundle: nil), forCellReuseIdentifier: "UtilitiesCell")
+        tableView.register(UINib(nibName: "UtilitiesTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "UtilitiesCell")
 
         payNowButton.radiusWithBorder(cornerRadius: 10, borderWidth: 1, hexColor: "#027C71")
 

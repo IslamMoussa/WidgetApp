@@ -7,7 +7,7 @@
 //
 
 import Foundation
-public enum ActivityType: String {    
+public enum ActivityType: String {
     case utilities
     case myRequests
     case events

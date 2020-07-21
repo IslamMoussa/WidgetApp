@@ -48,11 +48,10 @@ class WeatherTableViewCell: UITableViewCell {
 
         let cellNib = UINib(nibName: "WeatherCollectionViewCell", bundle: nil)
         self.collectionView.register(cellNib, forCellWithReuseIdentifier: "WeatherCell")
-    }    
-    
+    }
 }
 
-extension WeatherTableViewCell: UICollectionViewDelegate,UICollectionViewDataSource{
+extension WeatherTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
        return weatherCellViewModel?.weatherDataCellViewmodel.count ?? 0
@@ -71,7 +70,6 @@ extension WeatherTableViewCell: UICollectionViewDelegate,UICollectionViewDataSou
 
     func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-
 
         cell.alpha = 0.3
           UIView.animate(withDuration: 0.8) {

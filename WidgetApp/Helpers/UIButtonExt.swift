@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UIButton{
+extension UIButton {
     func radiusWithBorder(cornerRadius: Int, borderWidth: Int, hexColor: String) {
         self.layer.cornerRadius = 10
         self.layer.borderWidth = 1

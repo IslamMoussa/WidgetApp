@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 extension UILabel {
 
     func applyGradientWith(startColor: UIColor, endColor: UIColor) -> Bool {
@@ -34,8 +33,8 @@ extension UILabel {
 
         let gradientText = self.text ?? ""
 
-        let name:NSAttributedString.Key = NSAttributedString.Key.font
-        let textSize: CGSize = gradientText.size(withAttributes: [name:self.font as Any])
+        let name: NSAttributedString.Key = NSAttributedString.Key.font
+        let textSize: CGSize = gradientText.size(withAttributes: [name: self.font as Any])
         let width: CGFloat = textSize.width
         let height: CGFloat = textSize.height
 
@@ -50,14 +49,17 @@ extension UILabel {
 
         let glossGradient: CGGradient?
         let rgbColorspace: CGColorSpace?
-        let num_locations: size_t = 2
+        let numLocations: size_t = 2
         let locations: [CGFloat] = [ 0.0, 1.0 ]
-        let components: [CGFloat] = [startColorRed, startColorGreen, startColorBlue, startAlpha, endColorRed, endColorGreen, endColorBlue, endAlpha]
+        let components: [CGFloat] = [startColorRed, startColorGreen, startColorBlue, startAlpha,
+                                     endColorRed, endColorGreen, endColorBlue, endAlpha]
         rgbColorspace = CGColorSpaceCreateDeviceRGB()
-        glossGradient = CGGradient(colorSpace: rgbColorspace!, colorComponents: components, locations: locations, count: num_locations)
+        glossGradient = CGGradient(colorSpace: rgbColorspace!, colorComponents: components,
+                                   locations: locations, count: numLocations)
         let topCenter = CGPoint.zero
         let bottomCenter = CGPoint(x: 0, y: textSize.height)
-        context.drawLinearGradient(glossGradient!, start: topCenter, end: bottomCenter, options: CGGradientDrawingOptions.drawsBeforeStartLocation)
+        context.drawLinearGradient(glossGradient!, start: topCenter, end: bottomCenter,
+                                   options: CGGradientDrawingOptions.drawsBeforeStartLocation)
 
         UIGraphicsPopContext()
 
@@ -72,5 +74,4 @@ extension UILabel {
 
         return true
     }
-
 }

@@ -115,7 +115,7 @@ class ActivityViewModel {
 
             return UtilityCellViewModel2(titleText: utility.title, imageName: utility.imageName,
                                          totalBillsText: utility.totalBills,
-                                         totalDuesText: utility.totalDues, dataCellViewmodel:vms)
+                                         totalDuesText: utility.totalDues, dataCellViewmodel: vms)
         }
         return nil
     }

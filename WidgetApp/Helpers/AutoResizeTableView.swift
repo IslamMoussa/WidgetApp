@@ -9,26 +9,20 @@
 import Foundation
 import UIKit
 
-class AutoResizeTableView: UITableView
-{
-    override var intrinsicContentSize: CGSize
-    {
+class AutoResizeTableView: UITableView {
+    override var intrinsicContentSize: CGSize {
         self.layoutIfNeeded()
         return self.contentSize
-
     }
 
-    override var contentSize: CGSize
-        {
+    override var contentSize: CGSize {
         didSet {
             self.invalidateIntrinsicContentSize()
         }
     }
 
-    override func reloadData()
-    {
+    override func reloadData() {
         super.reloadData()
         self.invalidateIntrinsicContentSize()
     }
-
 }

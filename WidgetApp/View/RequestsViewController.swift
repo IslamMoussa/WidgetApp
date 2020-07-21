@@ -1,4 +1,3 @@
-
 //  ViewController.swift
 //  WidgetApp
 //
@@ -76,16 +75,14 @@ class RequestsViewController: UIViewController {
             }
         }
 
-        viewModel.goToRequestDetailsClosure = { [weak self] (vm) in
+        viewModel.goToRequestDetailsClosure = { [weak self] (vModl) in
             DispatchQueue.main.async {
                 self?.performSegue(withIdentifier: "GoToRequestDetails", sender: nil)
             }
         }
 
         viewModel.initFetch()
-
     }
-
 }
 
 extension RequestsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -94,7 +91,8 @@ extension RequestsViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RequestDataCell", for: indexPath)
             as? RequestDataTableViewCell else {
             fatalError("Cell not exists in storyboard")
-        }        
+        }
+        
         let cellVM = viewModel.getCellViewModel(at: indexPath.section ).trackingData[indexPath.row]
         //cell.requestCellViewModel = cellVM
         cell.titleLabel?.text = cellVM.title
@@ -158,7 +156,6 @@ extension RequestsViewController: UITableViewDelegate, UITableViewDataSource {
         return viewModel.getCellViewModel(at: section).trackingData.count
     }
 
-
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
 
         tableView.deselectRow(at: indexPath, animated: true)
@@ -168,14 +165,13 @@ extension RequestsViewController: UITableViewDelegate, UITableViewDataSource {
 
 }
 
-
 extension RequestsViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? RequestDetailsViewController,
+        if let vctrl = segue.destination as? RequestDetailsViewController,
             let request = viewModel.selectedRequest {
             print(request)
-            vc.requestDetailsViewModel = request
+            vctrl.requestDetailsViewModel = request
         }
     }
 }
