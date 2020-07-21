@@ -8,9 +8,9 @@
 
 import Foundation
 public enum ActivityType: String {    
-    case Utilities
-    case MyRequests
-    case Events
-    case Tickets
-    case Weather
+    case utilities
+    case myRequests
+    case events
+    case tickets
+    case weather
 }

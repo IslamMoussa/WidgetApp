@@ -17,7 +17,7 @@ protocol Activity: Codable {
 
 class Utility: Activity  {
     var rowsCount: Int
-    var type: String = ActivityType.Utilities.rawValue
+    var type: String = ActivityType.utilities.rawValue
     var title: String
     var imageName: String
     let totalBills: String
@@ -35,7 +35,7 @@ class Utility: Activity  {
 
 class Request: Activity {
     var rowsCount: Int
-    var type: String = ActivityType.MyRequests.rawValue
+    var type: String = ActivityType.myRequests.rawValue
     var title: String
     var imageName: String
     let pendingRequests: Int
@@ -49,7 +49,7 @@ class Request: Activity {
 
 class Event: Activity {
     var rowsCount: Int
-    var type: String = ActivityType.Events.rawValue
+    var type: String = ActivityType.events.rawValue
     var title: String
     var imageName: String
     let data:[EventRow]
@@ -63,7 +63,7 @@ class Event: Activity {
 
 class Ticket: Activity {
     var rowsCount: Int
-    var type: String = ActivityType.Tickets.rawValue
+    var type: String = ActivityType.tickets.rawValue
     var title: String
     var imageName: String
     let data:[TicketRow]
@@ -77,7 +77,7 @@ class Ticket: Activity {
 
 class Weather: Activity {
     var rowsCount: Int
-    var type: String = ActivityType.Weather.rawValue
+    var type: String = ActivityType.weather.rawValue
     var title: String
     var imageName: String
     let degree: String

@@ -104,13 +104,11 @@ extension RequestsViewController: UITableViewDelegate, UITableViewDataSource {
             cell.statusLabel?.text = "Confirmed"
             cell.statusImageView?.tintColor = UIColor(hexString: "#08AC86")
             cell.statusLabel?.textColor = UIColor(hexString: "#08AC86")
-            break
         case "0":
             cell.statusLabel?.text = "InProgress"
             cell.statusImageView?.tintColor = UIColor(hexString: "#FF895A")
             cell.statusLabel?.textColor = UIColor(hexString: "#FF895A")
-            break
-            default:
+        default:
             break
         }
         return cell

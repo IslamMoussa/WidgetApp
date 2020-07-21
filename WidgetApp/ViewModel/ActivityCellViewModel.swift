@@ -53,11 +53,9 @@ struct UtilityCellViewModel2 {
     let imageName: String
     let totalBillsText: String
     let totalDuesText: String
-
     let dataCellViewmodel: [UtilityCellViewModel]
     var showMore: Bool = false
-
-    var reloadParentTableViewClosure: (()->())?
+    var reloadParentTableViewClosure: (()-> Void)?
 
     func reloadParentTV()  {
         self.reloadParentTableViewClosure?()
@@ -65,20 +63,18 @@ struct UtilityCellViewModel2 {
 
     func prefixData(max: Int) -> [UtilityCellViewModel]{
         var items: [UtilityCellViewModel] = []
-        var i:Int = 0
+        var ind: Int = 0
         let arr = dataCellViewmodel
         for item in arr {
-            if i >= max {
+            if ind >= max {
                 break
             }
             items.append(item)
-            i+=1
+            ind+=1
         }
 
         return items
     }
-
-
 }
 
 struct WeatherCellViewModel {

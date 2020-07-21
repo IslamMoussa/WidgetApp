@@ -12,7 +12,7 @@ struct Requests: Codable {
     let requests: [RequestModel]
 }
 
-struct RequestModel: Codable{
+struct RequestModel: Codable {
     let title: String
     let referencenumber: String
     let submittedDate: String

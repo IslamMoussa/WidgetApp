@@ -34,17 +34,15 @@ class RequestsViewModel {
         }
     }
 
-
-
     var numberOfCells: Int {
         return cellViewModels.count
     }
 
     var selectedRequest: RequestCellViewModel?
 
-    var reloadTableViewClosure: (()->())?
-    var showAlertClosure: (()->())?
-    var updateLoadingStatus: (()->())?
+    var reloadTableViewClosure: (()-> Void)?
+    var showAlertClosure: (()-> Void)?
+    var updateLoadingStatus: (()-> Void)?
     var goToRequestDetailsClosure: ((_ selectedRequest: RequestCellViewModel)->())?
 
     init( apiService: APIServiceProtocol = APIService()) {
@@ -53,7 +51,7 @@ class RequestsViewModel {
 
     func initFetch() {
         state = .loading
-        apiService.fetchRequests { [weak self] (success, requests, error) in
+        apiService.fetchRequests { [weak self] (_, requests, error) in
             guard let self = self else {
                 return
             }
@@ -76,8 +74,6 @@ class RequestsViewModel {
     func getCellViewModel( at indexPath: IndexPath ) -> RequestCellViewModel {
         return cellViewModels[indexPath.row]
     }
-
-    
 
     func getCellViewModel( at row: Int ) -> RequestCellViewModel {
         return cellViewModels[row]
@@ -114,7 +110,7 @@ class RequestsViewModel {
 }
 
 extension RequestsViewModel {
-    func userPressed( at indexPath: IndexPath ){
+    func userPressed( at indexPath: IndexPath ) {
         let request = self.requests[indexPath.row]
         selectedRequest = createCellViewModel(request: request)
         self.goToRequestDetailsClosure?(selectedRequest!)

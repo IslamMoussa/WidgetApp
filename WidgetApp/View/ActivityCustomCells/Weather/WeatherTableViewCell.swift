@@ -31,7 +31,6 @@ class WeatherTableViewCell: UITableViewCell {
             collectionView.reloadData()
         }
     }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -53,7 +52,7 @@ class WeatherTableViewCell: UITableViewCell {
     
 }
 
-extension WeatherTableViewCell : UICollectionViewDelegate,UICollectionViewDataSource{
+extension WeatherTableViewCell: UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
        return weatherCellViewModel?.weatherDataCellViewmodel.count ?? 0
@@ -70,7 +69,8 @@ extension WeatherTableViewCell : UICollectionViewDelegate,UICollectionViewDataSo
         return 1
     }
 
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 
 
         cell.alpha = 0.3
@@ -79,12 +79,14 @@ extension WeatherTableViewCell : UICollectionViewDelegate,UICollectionViewDataSo
           }
     }
 
-    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView,
+                        didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         cell.alpha = 1
     }
 
-    func getWeatherCell(indexPath: IndexPath ) -> WeatherCollectionViewCell{
-           guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCell", for: indexPath) as? WeatherCollectionViewCell else {
+    func getWeatherCell(indexPath: IndexPath ) -> WeatherCollectionViewCell {
+           guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCell", for: indexPath)
+            as? WeatherCollectionViewCell else {
            fatalError("Cell not exists in storyboard")}
           return cell
        }

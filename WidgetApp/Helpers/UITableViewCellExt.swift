@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UITableView{
+extension UITableView {
 
     func getCell(identifier: String, for indexPath: IndexPath) -> UITableViewCell {
 

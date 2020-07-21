@@ -39,7 +39,7 @@ class UtilitiesTableViewCell2: UITableViewCell {
     }
 }
 
-extension UtilitiesTableViewCell2{
+extension UtilitiesTableViewCell2 {
     func initUI(){
         tableView.delegate = self
         tableView.dataSource = self
@@ -55,13 +55,7 @@ extension UtilitiesTableViewCell2{
         utilityCellViewModel?.reloadParentTableViewClosure?()
     }
 
-    func initVM(){
-
-    }
 }
-
-
-
 
 extension UtilitiesTableViewCell2:  UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -83,31 +77,27 @@ extension UtilitiesTableViewCell2:  UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 
         let intTotalrow = tableView.numberOfRows(inSection: indexPath.section)
-        if indexPath.row == intTotalrow - 1{
+        if indexPath.row == intTotalrow - 1 {
 
-            let c = cell as? UtilitiesTableViewCell
-            c?.priceLabel.applyGradientWith(startColor: UIColor(hexString: "#606B77"),
-                                            endColor: UIColor(hexString: "#B9C3D0"))
-            c?.dateLabel.applyGradientWith(startColor: UIColor(hexString: "#606B77"),
-                                           endColor: UIColor(hexString: "#B9C3D0"))
-            c?.titleLabel.applyGradientWith(startColor: UIColor(hexString: "#606B77"),
-                                            endColor: UIColor(hexString: "#B9C3D0"))
+            if let utilityCell = cell as? UtilitiesTableViewCell {
+                utilityCell.priceLabel.applyGradientWith(startColor: UIColor(hexString: "#606B77"),
+                                                         endColor: UIColor(hexString: "#B9C3D0"))
+                utilityCell.dateLabel.applyGradientWith(startColor: UIColor(hexString: "#606B77"),
+                                                        endColor: UIColor(hexString: "#B9C3D0"))
+                utilityCell.titleLabel.applyGradientWith(startColor: UIColor(hexString: "#606B77"),
+                                                         endColor: UIColor(hexString: "#B9C3D0"))
+            }
         }
     }
 
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//
-//        return 30.0
-//
-//    }
 }
 
 extension UtilitiesTableViewCell2 {
 
-    func getUtilityCell(indexPath: IndexPath ) -> UtilitiesTableViewCell{
+    func getUtilityCell(indexPath: IndexPath ) -> UtilitiesTableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UtilitiesCell", for: indexPath)
             as? UtilitiesTableViewCell else {
-            fatalError("Cell not exists in storyboard")}
+                fatalError("Cell not exists in storyboard")}
         return cell
     }
 }

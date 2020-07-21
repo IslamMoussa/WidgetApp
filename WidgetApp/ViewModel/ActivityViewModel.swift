@@ -27,8 +27,8 @@ class ActivityViewModel {
     }
 
 
-    var reloadTableViewClosure: (()->())?
-    var updateLoadingStatus: (()->())?
+    var reloadTableViewClosure: (()-> Void)?
+    var updateLoadingStatus: (()-> Void)?
 
     init( apiService: APIServiceProtocol = APIService()) {
         self.apiService = apiService
@@ -62,72 +62,91 @@ class ActivityViewModel {
         return 0
     }
 
-    func numberOfRowsOfSection(at: Int ) -> Int {
-        let activity = activities[at]
+    func numberOfRowsOfSection(index: Int ) -> Int {
+        let activity = activities[index]
         return activity.rowsCount
     }
 
-    func getSectionType(at: Int ) -> ActivityType {
-        let type = ActivityType(rawValue: activities[at].type)!
-        return type
+    func getSectionType(index: Int ) -> ActivityType? {
+        if let type = ActivityType(rawValue: activities[index].type){
+            return type
+        }
+        return nil
     }
 
-    func getUtilityHeaderCellViewModel(at: Int ) -> UtilityHeaderViewModel {
-        let utility = activities[at] as! Utility
-        return UtilityHeaderViewModel(titleText: utility.title, imageName: utility.imageName, totalBillsText: utility.totalBills, totalDuesText: utility.totalDues)
+    func getUtilityHeaderCellViewModel(index: Int ) -> UtilityHeaderViewModel? {
+        if let utility = activities[index] as? Utility{
+            return UtilityHeaderViewModel(titleText: utility.title, imageName: utility.imageName, totalBillsText: utility.totalBills, totalDuesText: utility.totalDues)
+        }
+        return nil
     }
 
-    func getmyRequestsHeaderCellViewModel(at: Int ) -> MyRequestHeaderCellViewModel {
-        let request = activities[at] as! Request
-
-        return MyRequestHeaderCellViewModel(titleText: request.title, imageName: request.imageName, pendingRequestsText: String(request.pendingRequests))
+    func getmyRequestsHeaderCellViewModel(index: Int ) -> MyRequestHeaderCellViewModel? {
+        if let request = activities[index] as? Request{
+            return MyRequestHeaderCellViewModel(titleText: request.title, imageName: request.imageName,
+                                                pendingRequestsText: String(request.pendingRequests))
+        }
+        return nil
     }
 
-    func getActivityHeaderCellViewModel(at: Int ) -> ActivityHeaderCellViewModel {
-        let activity = activities[at]
+    func getActivityHeaderCellViewModel(index: Int ) -> ActivityHeaderCellViewModel {
+        let activity = activities[index]
 
         return ActivityHeaderCellViewModel(titleText: activity.title, imageName: activity.imageName)
     }
 
-    func getUtilityCellViewModel(indexPath: IndexPath ) -> UtilityCellViewModel {
-        let utility = activities[indexPath.section] as! Utility
-        let d = utility.data[indexPath.row]
-        return UtilityCellViewModel(titleText: d.title, dateText: d.dateTxt, priceText: d.priceTxt)
+    func getUtilityCellViewModel(indexPath: IndexPath ) -> UtilityCellViewModel? {
+        if let utility = activities[indexPath.section] as? Utility{
+            let d = utility.data[indexPath.row]
+            return UtilityCellViewModel(titleText: d.title, dateText: d.dateTxt, priceText: d.priceTxt)
+        }
+        return nil
     }
 
-    func getUtilityCellViewModel2(indexPath: IndexPath ) -> UtilityCellViewModel2 {
-        let utility = activities[indexPath.section] as! Utility
+    func getUtilityCellViewModel2(indexPath: IndexPath ) -> UtilityCellViewModel2? {
+        if let utility = activities[indexPath.section] as? Utility{
+            var vms : [UtilityCellViewModel]=[]
+            for item in utility.data {
+                vms.append( UtilityCellViewModel(titleText: item.title, dateText: item.dateTxt, priceText: item.priceTxt))
+            }
 
-        var vms : [UtilityCellViewModel]=[]
-        for item in utility.data {
-            vms.append( UtilityCellViewModel(titleText: item.title, dateText: item.dateTxt, priceText: item.priceTxt))
+            return UtilityCellViewModel2(titleText: utility.title, imageName: utility.imageName,
+                                         totalBillsText: utility.totalBills, totalDuesText: utility.totalDues, dataCellViewmodel:vms)
         }
-
-        return UtilityCellViewModel2(titleText: utility.title, imageName: utility.imageName, totalBillsText: utility.totalBills, totalDuesText: utility.totalDues, dataCellViewmodel:vms)
+        return nil
     }
 
-    func getEventCellViewModel(indexPath: IndexPath ) -> EventCellViewModel {
-           let event = activities[indexPath.section] as! Event
-           let d = event.data[0]
-        return EventCellViewModel(headerTitleText: event.title, headerImageName: event.imageName,title: d.title, dateTxt: d.dateTxt, imageName: d.imageName)
-       }
-
-    func getTicketCellViewModel(indexPath: IndexPath ) -> TicketCellViewModel {
-           let ticket = activities[indexPath.section] as! Ticket
-           let d = ticket.data[0]
-        return TicketCellViewModel(headerTitleText: ticket.title, headerImageName: ticket.imageName,title: d.title, dateTxt: d.dateTxt, imageName: d.imageName)
-       }
-
-
-    func getWeatherCellViewModel(indexPath: IndexPath ) -> WeatherCellViewModel {
-        let weather = activities[indexPath.section] as! Weather
-
-        var vms : [WeatherDataViewModel]=[]
-        for item in weather.data {
-            vms.append( WeatherDataViewModel(time: item.time, imageName: item.imageName, degree: item.degree))
+    func getEventCellViewModel(indexPath: IndexPath ) -> EventCellViewModel? {
+        if let event = activities[indexPath.section] as? Event{
+            let d = event.data[0]
+            return EventCellViewModel(headerTitleText: event.title, headerImageName: event.imageName,
+                                      title: d.title, dateTxt: d.dateTxt, imageName: d.imageName)
         }
+        return nil
+    }
 
-        return WeatherCellViewModel(titleText: weather.title, imageName: weather.imageName, degree: weather.degree, day: weather.day, weatherImageName: weather.weatherImageName, location: weather.location, weatherText: weather.weatherText, weatherDataCellViewmodel: vms)
+    func getTicketCellViewModel(indexPath: IndexPath ) -> TicketCellViewModel? {
+        if let ticket = activities[indexPath.section] as? Ticket{
+            let d = ticket.data[0]
+            return TicketCellViewModel(headerTitleText: ticket.title, headerImageName: ticket.imageName,
+                                       title: d.title, dateTxt: d.dateTxt, imageName: d.imageName)
+        }
+        return nil
+    }
+
+
+    func getWeatherCellViewModel(indexPath: IndexPath ) -> WeatherCellViewModel? {
+        if let weather = activities[indexPath.section] as? Weather{
+            var vms: [WeatherDataViewModel]=[]
+            for item in weather.data {
+                vms.append( WeatherDataViewModel(time: item.time, imageName: item.imageName, degree: item.degree))
+            }
+
+            return WeatherCellViewModel(titleText: weather.title, imageName: weather.imageName,
+                                        degree: weather.degree, day: weather.day, weatherImageName: weather.weatherImageName,
+                                        location: weather.location, weatherText: weather.weatherText, weatherDataCellViewmodel: vms)
+        }
+        return nil
     }
 
 

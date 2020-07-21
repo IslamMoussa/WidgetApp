@@ -21,5 +21,4 @@ class UtilitiesTableViewCell: UITableViewCell {
             dateLabel.text = utilityCellViewModel?.dateText
         }
     }
-    
 }
