@@ -35,8 +35,7 @@ class APIService: APIServiceProtocol {
                 decoder.dateDecodingStrategy = .iso8601
                 let requests = try decoder.decode(Requests.self, from: data)
                 complete(true, requests.requests, nil)
-            }
-            catch { }
+            } catch { }
         }
     }
 
