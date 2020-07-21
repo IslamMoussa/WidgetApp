@@ -86,9 +86,9 @@ class Weather: Activity {
     let location: String
     let weatherText: String
     let data: [WeatherRow]
-    init(title: String, imageName: String,degree: String,
+    init(title: String, imageName: String, degree: String,
          day: String, weatherImageName: String, location: String,
-         weatherText: String,data: [WeatherRow]) {
+         weatherText: String, data: [WeatherRow]) {
         self.title=title
         self.imageName=imageName
         self.location=location
