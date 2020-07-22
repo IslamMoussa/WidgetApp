@@ -47,6 +47,8 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         case .myRequests:
             let cell = getMyRequestsHeaderCell(section: indexPath.section)
             cell.requestHeaderCellViewModel = viewModel.getmyRequestsHeaderCellViewModel(index: indexPath.section)
+            cell.viewAllButton.addTarget(self, action: #selector(ActivityViewController.goToRequests(_:)),
+                                         for: UIControl.Event.touchUpInside)
             return cell
         case .events:
             let cell = getEventCell(indexPath: indexPath)
@@ -212,5 +214,9 @@ extension ActivityViewController {
                }
 
         viewModel.initFetch()
+    }
+
+    @objc func goToRequests(_ sender: UIButton!) {
+        self.performSegue(withIdentifier: "goToRequests", sender: sender)
     }
 }

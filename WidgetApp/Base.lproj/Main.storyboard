@@ -54,11 +54,11 @@
             <objects>
                 <viewController id="u1N-dB-xuw" userLabel="Request Details View Controller" customClass="RequestDetailsViewController" customModule="WidgetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9R0-DO-c5g">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="3RN-RL-UOf">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Oh4-E7-Ns3"/>
                                 </constraints>
@@ -69,7 +69,7 @@
                                 </segments>
                             </segmentedControl>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HEq-up-g5A">
-                                <rect key="frame" x="0.0" y="48" width="414" height="794"/>
+                                <rect key="frame" x="0.0" y="136" width="414" height="760"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PRZ-Tc-L1W" userLabel="ContainerView">
                                         <rect key="frame" x="20" y="20" width="374" height="767"/>
@@ -121,9 +121,9 @@
                                 <rect key="frame" x="0.0" y="118" width="414" height="778"/>
                             </tableView>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNi-rW-Mli">
-                                <rect key="frame" x="374" y="98" width="30" height="20"/>
+                                <rect key="frame" x="379" y="98" width="25" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="ibF-mF-bMg"/>
+                                    <constraint firstAttribute="width" constant="25" id="ibF-mF-bMg"/>
                                     <constraint firstAttribute="height" constant="20" id="usJ-7m-svk"/>
                                 </constraints>
                                 <state key="normal" image="reorder"/>
@@ -164,6 +164,7 @@
                     <connections>
                         <outlet property="buttonReorder" destination="kNi-rW-Mli" id="F6F-vw-Oei"/>
                         <outlet property="tableView" destination="qa8-hQ-IRs" id="pqb-ka-eHR"/>
+                        <segue destination="tvL-pv-7wS" kind="show" identifier="goToRequests" id="myz-OF-Mw4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ugg-nX-5he" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

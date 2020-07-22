@@ -98,7 +98,7 @@
                 <outlet property="pendingRequestsLabel" destination="ab2-OV-Hjq" id="SIm-VL-Vv8"/>
                 <outlet property="sectionImageView" destination="D4I-Lx-SWm" id="OSH-Pc-LZa"/>
                 <outlet property="sectionTitleLabel" destination="RWO-bA-3WB" id="ReU-vc-fvk"/>
-                <outlet property="viewAllButton" destination="ifP-X8-y4E" id="AmT-zO-Stf"/>
+                <outlet property="viewAllButton" destination="ifP-X8-y4E" id="XuR-DB-f4V"/>
             </connections>
             <point key="canvasLocation" x="139.85507246376812" y="175.11160714285714"/>
         </tableViewCell>

@@ -22,7 +22,6 @@ class RequestHeaderTableViewCell: UITableViewCell {
             pendingRequestsLabel.text = requestHeaderCellViewModel?.pendingRequestsText
         }
     }
-
     override func awakeFromNib() {
         super.awakeFromNib()
         viewAllButton.radiusWithBorder(cornerRadius: 10, borderWidth: 1, hexColor: "#027C71")
