@@ -19,7 +19,6 @@ class WeatherTableViewCell: UITableViewCell {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var weatherLabel: UILabel!
     @IBOutlet var containerView: UIView!
-
     var weatherCellViewModel: WeatherCellViewModel? {
         didSet {
             headerTitleLabel.text = weatherCellViewModel?.titleText

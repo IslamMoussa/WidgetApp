@@ -186,4 +186,3 @@ struct ActivityModel: Decodable {
         case weather
     }
 }
-.
