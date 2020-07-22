@@ -17,7 +17,6 @@ class EventsTableViewCell: UITableViewCell {
     @IBOutlet var headerTitleLabel: UILabel!
     @IBOutlet var headerEditButton: UIImageView!
     @IBOutlet var containerView: UIView!
-    
     var eventCellViewModel: EventCellViewModel? {
         didSet {
             titleLabel.text = eventCellViewModel?.title

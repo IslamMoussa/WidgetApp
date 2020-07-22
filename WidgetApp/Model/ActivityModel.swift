@@ -175,7 +175,7 @@ struct ActivityModel: Decodable {
         myRequests = try container.decode(Request.self, forKey: .myRequests)
         ticket = try container.decode(Ticket.self, forKey: .ticket)
         weather = try container.decode(Weather.self, forKey: .weather)
-        activities = [utility,myRequests, event, ticket, weather]
+        activities = [utility, myRequests, event, ticket, weather]
     }
 
     enum CodingKeys: String, CodingKey {
@@ -186,3 +186,4 @@ struct ActivityModel: Decodable {
         case weather
     }
 }
+.
