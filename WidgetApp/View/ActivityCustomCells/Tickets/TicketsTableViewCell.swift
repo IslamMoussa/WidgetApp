@@ -17,7 +17,8 @@ class TicketsTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var showTicketButton: UIButton!
-
+    @IBOutlet var containerView: UIView!
+    
     var ticketCellViewModel: TicketCellViewModel? {
         didSet {
             titleLabel.text = ticketCellViewModel?.title
@@ -31,6 +32,7 @@ class TicketsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         showTicketButton.radiusWithBorder(cornerRadius: 10, borderWidth: 1, hexColor: "#027C71")
+        containerView.radiusWithBorder(cornerRadius: 10, borderWidth: 0.2, color: UIColor.lightGray.cgColor)
     }
 
 }

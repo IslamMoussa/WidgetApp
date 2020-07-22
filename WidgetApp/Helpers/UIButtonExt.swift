@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 extension UIButton {
-    func radiusWithBorder(cornerRadius: Int, borderWidth: Int, hexColor: String) {
-        self.layer.cornerRadius = 10
-        self.layer.borderWidth = 1
+    func radiusWithBorder(cornerRadius: CGFloat, borderWidth: CGFloat, hexColor: String) {
+        self.layer.cornerRadius = cornerRadius
+        self.layer.borderWidth = borderWidth
         self.layer.borderColor = UIColor(hexString: hexColor).cgColor
         self.clipsToBounds = true
 

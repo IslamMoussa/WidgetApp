@@ -118,12 +118,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qa8-hQ-IRs">
-                                <rect key="frame" x="0.0" y="108" width="414" height="788"/>
+                                <rect key="frame" x="0.0" y="118" width="414" height="778"/>
                             </tableView>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNi-rW-Mli">
-                                <rect key="frame" x="384" y="98" width="20" height="20"/>
+                                <rect key="frame" x="374" y="98" width="30" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="ibF-mF-bMg"/>
+                                    <constraint firstAttribute="width" constant="30" id="ibF-mF-bMg"/>
                                     <constraint firstAttribute="height" constant="20" id="usJ-7m-svk"/>
                                 </constraints>
                                 <state key="normal" image="reorder"/>
@@ -134,7 +134,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="qa8-hQ-IRs" firstAttribute="top" secondItem="si1-IY-Mk4" secondAttribute="top" constant="20" id="1Go-gj-ODb"/>
+                            <constraint firstItem="qa8-hQ-IRs" firstAttribute="top" secondItem="si1-IY-Mk4" secondAttribute="top" constant="30" id="1Go-gj-ODb"/>
                             <constraint firstItem="kNi-rW-Mli" firstAttribute="top" secondItem="si1-IY-Mk4" secondAttribute="top" constant="10" id="2Qy-H5-7kp"/>
                             <constraint firstAttribute="bottom" secondItem="qa8-hQ-IRs" secondAttribute="bottom" id="DVI-hl-qjH"/>
                             <constraint firstItem="si1-IY-Mk4" firstAttribute="trailing" secondItem="kNi-rW-Mli" secondAttribute="trailing" constant="10" id="OUv-T4-aLS"/>

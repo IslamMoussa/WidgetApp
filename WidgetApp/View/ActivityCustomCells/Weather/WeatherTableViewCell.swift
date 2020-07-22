@@ -18,6 +18,7 @@ class WeatherTableViewCell: UITableViewCell {
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var weatherLabel: UILabel!
+    @IBOutlet var containerView: UIView!
 
     var weatherCellViewModel: WeatherCellViewModel? {
         didSet {
@@ -48,6 +49,7 @@ class WeatherTableViewCell: UITableViewCell {
 
         let cellNib = UINib(nibName: "WeatherCollectionViewCell", bundle: nil)
         self.collectionView.register(cellNib, forCellWithReuseIdentifier: "WeatherCell")
+        containerView.radiusWithBorder(cornerRadius: 10, borderWidth: 0.2, color: UIColor.lightGray.cgColor)
     }
 }
 

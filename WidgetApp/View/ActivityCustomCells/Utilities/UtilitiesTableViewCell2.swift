@@ -10,6 +10,7 @@ import UIKit
 
 class UtilitiesTableViewCell2: UITableViewCell {
 
+    @IBOutlet var containerView: UIView!
     @IBOutlet var moreButton: UIButton!
     @IBOutlet var payNowButton: UIButton!
     @IBOutlet var tableView: UITableView!
@@ -48,7 +49,7 @@ extension UtilitiesTableViewCell2 {
                            forCellReuseIdentifier: "UtilitiesCell")
 
         payNowButton.radiusWithBorder(cornerRadius: 10, borderWidth: 1, hexColor: "#027C71")
-
+        containerView.radiusWithBorder(cornerRadius: 10, borderWidth: 0.2, color: UIColor.lightGray.cgColor)
     }
 
     @IBAction func expandAction(_ sender: UIButton) {

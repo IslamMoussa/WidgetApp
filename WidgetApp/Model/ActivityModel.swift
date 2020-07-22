@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Activity: Codable {
+protocol Activity: Decodable {
     var type: String { get set }
     var title: String { get set }
     var imageName: String { get set }
@@ -16,7 +16,7 @@ protocol Activity: Codable {
 }
 
 class Utility: Activity {
-    var rowsCount: Int
+    var rowsCount: Int = 0
     var type: String = ActivityType.utilities.rawValue
     var title: String
     var imageName: String
@@ -31,10 +31,18 @@ class Utility: Activity {
         self.data=data
         rowsCount = data.count
     }
+
+    enum CodingKeys: String, CodingKey {
+        case title
+        case imageName
+        case totalBills
+        case totalDues
+        case data
+    }
 }
 
 class Request: Activity {
-    var rowsCount: Int
+    var rowsCount: Int = 0
     var type: String = ActivityType.myRequests.rawValue
     var title: String
     var imageName: String
@@ -43,12 +51,17 @@ class Request: Activity {
         self.title=title
         self.imageName=imageName
         self.pendingRequests=pendingRequests
-        rowsCount = 0
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case title
+        case imageName
+        case pendingRequests
     }
 }
 
 class Event: Activity {
-    var rowsCount: Int
+    var rowsCount: Int = 0
     var type: String = ActivityType.events.rawValue
     var title: String
     var imageName: String
@@ -59,10 +72,16 @@ class Event: Activity {
         self.data=data
         rowsCount = data.count
     }
+
+    enum CodingKeys: String, CodingKey {
+        case title
+        case imageName
+        case data
+    }
 }
 
 class Ticket: Activity {
-    var rowsCount: Int
+    var rowsCount: Int = 0
     var type: String = ActivityType.tickets.rawValue
     var title: String
     var imageName: String
@@ -73,10 +92,16 @@ class Ticket: Activity {
         self.data=data
         rowsCount = data.count
     }
+
+    enum CodingKeys: String, CodingKey {
+        case title
+        case imageName
+        case data
+    }
 }
 
 class Weather: Activity {
-    var rowsCount: Int
+    var rowsCount: Int = 0
     var type: String = ActivityType.weather.rawValue
     var title: String
     var imageName: String
@@ -98,6 +123,17 @@ class Weather: Activity {
         self.degree=degree
         self.data=data
         rowsCount = data.count
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case title
+        case imageName
+        case degree
+        case day
+        case weatherImageName
+        case location
+        case weatherText
+        case data
     }
 }
 
@@ -123,4 +159,30 @@ struct WeatherRow: Codable {
     let time: String
     let imageName: String
     let degree: String
+}
+
+struct ActivityModel: Decodable {
+    let utility: Utility
+    let myRequests: Request
+    let event: Event
+    let ticket: Ticket
+    let weather: Weather
+    var activities: [Activity]
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        utility = try container.decode(Utility.self, forKey: .utility)
+        event = try container.decode(Event.self, forKey: .event)
+        myRequests = try container.decode(Request.self, forKey: .myRequests)
+        ticket = try container.decode(Ticket.self, forKey: .ticket)
+        weather = try container.decode(Weather.self, forKey: .weather)
+        activities = [utility,myRequests, event, ticket, weather]
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case utility
+        case event
+        case ticket
+        case myRequests
+        case weather
+    }
 }

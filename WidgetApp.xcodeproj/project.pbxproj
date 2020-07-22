@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		194B2A5524C7C7AB0077186D /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194B2A5424C7C7AB0077186D /* UIViewExt.swift */; };
 		19514A6F24C6051800E6333C /* AutoResizeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19514A6E24C6051800E6333C /* AutoResizeTableView.swift */; };
 		19514A7124C62A3500E6333C /* UILabelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19514A7024C62A3500E6333C /* UILabelExt.swift */; };
 		195724C724C330530003A425 /* RequestDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195724C624C330530003A425 /* RequestDetailsViewController.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		194B2A5424C7C7AB0077186D /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		19514A6E24C6051800E6333C /* AutoResizeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoResizeTableView.swift; sourceTree = "<group>"; };
 		19514A7024C62A3500E6333C /* UILabelExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExt.swift; sourceTree = "<group>"; };
 		195724C624C330530003A425 /* RequestDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailsViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				195724F724C3E68B0003A425 /* UIButtonExt.swift */,
 				19514A6E24C6051800E6333C /* AutoResizeTableView.swift */,
 				19514A7024C62A3500E6333C /* UILabelExt.swift */,
+				194B2A5424C7C7AB0077186D /* UIViewExt.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				196FE11F24C1D3FB000A8A67 /* RequestModel.swift in Sources */,
 				195724F824C3E68B0003A425 /* UIButtonExt.swift in Sources */,
 				195DBED724C4BE5E005037E3 /* UtilitiesTableViewCell2.swift in Sources */,
+				194B2A5524C7C7AB0077186D /* UIViewExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

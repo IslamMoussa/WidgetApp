@@ -1,197 +1,107 @@
 {
-"Activities": [
-           {
-           "title": "Reservation of Trade Name",
-           "referencenumber": "87345",
-           "submittedDate": "10 Sep 2020 | 5:00 PM",
-           "investor": "Theodore Foster",
-           "applicantName": "Luis Austin",
-           "email": "Email@company.com",
-           "mobilenumber": "971343476543",
-           "legalType": "In hac habit.",
-           "licenseType": "Lorem ipsum.",
-           "description": "Site inspection appointment",
-           "dateTime": "13 Sep 2020, 09:30 pm",
-           "locationTxt": "35th Street, Al Wasl Road, Dubai.",
-           "remarks": "Please meet engineer Ahmed at the site on time",
-           "expiryDate": "13 Sep 2020",
-           "trackingData":[
-               {"title": "License Details",
-               "date": "13 Sep 2020 | 5:00 PM",
-                   "status":"1"},
-               {"title": "Verification",
-               "date": "13 Sep 2020 | 5:00 PM",
-                   "status":"1"}
-           ]
-           },
-
-           {
-           "title": "Reservation of Trade Name",
-           "referencenumber": "87345",
-           "submittedDate": "10 Sep 2020 | 5:00 PM",
-           "investor": "Theodore Foster",
-           "applicantName": "Luis Austin",
-           "email": "Email@company.com",
-           "mobilenumber": "971343476543",
-           "legalType": "In hac habit.",
-           "licenseType": "Lorem ipsum.",
-           "description": "Site inspection appointment",
-           "dateTime": "13 Sep 2020, 09:30 pm",
-           "locationTxt": "35th Street, Al Wasl Road, Dubai.",
-           "remarks": "Please meet engineer Ahmed at the site on time",
-           "expiryDate": "13 Sep 2020",
-           "trackingData":[
-               {"title": "License Details",
-               "date": "13 Sep 2020 | 5:00 PM",
-                   "status":"1"},
-               {"title": "Verification",
-               "date": "13 Sep 2020 | 5:00 PM",
-                   "status":"1"},
-               {"title": "Payment",
-               "date": "13 Sep 2020 | 5:00 PM",
-                   "status":"0"}
-           ]
-           },
-
-           {
-           "title": "Reservation of Trade Name",
-           "referencenumber": "87345",
-           "submittedDate": "10 Sep 2020 | 5:00 PM",
-           "investor": "Theodore Foster",
-           "applicantName": "Luis Austin",
-           "email": "Email@company.com",
-           "mobilenumber": "971343476543",
-           "legalType": "In hac habit.",
-           "licenseType": "Lorem ipsum.",
-           "description": "Site inspection appointment",
-           "dateTime": "13 Sep 2020, 09:30 pm",
-           "locationTxt": "35th Street, Al Wasl Road, Dubai.",
-           "remarks": "Please meet engineer Ahmed at the site on time",
-           "expiryDate": "13 Sep 2020",
-           "trackingData":[
-               {"title": "License Details",
-               "date": "13 Sep 2020 | 5:00 PM",
-                   "status":"1"},
-               {"title": "Verification",
-               "date": "13 Sep 2020 | 5:00 PM",
-                   "status":"1"},
-               {"title": "Payment",
-               "date": "13 Sep 2020 | 5:00 PM",
-                   "status":"0"}
-           ]
-           },
-
-           {
-           "title": "Reservation of Trade Name",
-           "referencenumber": "87345",
-           "submittedDate": "10 Sep 2020 | 5:00 PM",
-           "investor": "Theodore Foster",
-           "applicantName": "Luis Austin",
-           "email": "Email@company.com",
-           "mobilenumber": "971343476543",
-           "legalType": "In hac habit.",
-           "licenseType": "Lorem ipsum.",
-           "description": "Site inspection appointment",
-           "dateTime": "13 Sep 2020, 09:30 pm",
-           "locationTxt": "35th Street, Al Wasl Road, Dubai.",
-           "remarks": "Please meet engineer Ahmed at the site on time",
-           "expiryDate": "13 Sep 2020",
-           "trackingData":[
-               {"title": "License Details",
-               "date": "13 Sep 2020 | 5:00 PM",
-                   "status":"1"},
-               {"title": "Verification",
-               "date": "13 Sep 2020 | 5:00 PM",
-                   "status":"1"},
-               {"title": "Payment",
-               "date": "13 Sep 2020 | 5:00 PM",
-                   "status":"0"}
-           ]
-           },
-
-           {
-           "title": "Reservation of Trade Name",
-           "referencenumber": "87345",
-           "submittedDate": "10 Sep 2020 | 5:00 PM",
-           "investor": "Theodore Foster",
-           "applicantName": "Luis Austin",
-           "email": "Email@company.com",
-           "mobilenumber": "971343476543",
-           "legalType": "In hac habit.",
-           "licenseType": "Lorem ipsum.",
-           "description": "Site inspection appointment",
-           "dateTime": "13 Sep 2020, 09:30 pm",
-           "locationTxt": "35th Street, Al Wasl Road, Dubai.",
-           "remarks": "Please meet engineer Ahmed at the site on time",
-           "expiryDate": "13 Sep 2020",
-           "trackingData":[
-               {"title": "License Details",
-               "date": "13 Sep 2020 | 5:00 PM",
-                   "status":"1"},
-               {"title": "Verification",
-               "date": "13 Sep 2020 | 5:00 PM",
-                   "status":"1"},
-               {"title": "Payment",
-               "date": "13 Sep 2020 | 5:00 PM",
-                   "status":"0"}
-           ]
-           },
-
-           {
-           "title": "Reservation of Trade Name",
-           "referencenumber": "87345",
-           "submittedDate": "10 Sep 2020 | 5:00 PM",
-           "investor": "Theodore Foster",
-           "applicantName": "Luis Austin",
-           "email": "Email@company.com",
-           "mobilenumber": "971343476543",
-           "legalType": "In hac habit.",
-           "licenseType": "Lorem ipsum.",
-           "description": "Site inspection appointment",
-           "dateTime": "13 Sep 2020, 09:30 pm",
-           "locationTxt": "35th Street, Al Wasl Road, Dubai.",
-           "remarks": "Please meet engineer Ahmed at the site on time",
-           "expiryDate": "13 Sep 2020",
-           "trackingData":[
-               {"title": "License Details",
-               "date": "13 Sep 2020 | 5:00 PM",
-                   "status":"1"},
-               {"title": "Verification",
-               "date": "13 Sep 2020 | 5:00 PM",
-                   "status":"1"},
-               {"title": "Payment",
-               "date": "13 Sep 2020 | 5:00 PM",
-                   "status":"0"}
-           ]
-           },
-
-           {
-           "title": "Reservation of Trade Name",
-           "referencenumber": "87345",
-           "submittedDate": "10 Sep 2020 | 5:00 PM",
-           "investor": "Theodore Foster",
-           "applicantName": "Luis Austin",
-           "email": "Email@company.com",
-           "mobilenumber": "971343476543",
-           "legalType": "In hac habit.",
-           "licenseType": "Lorem ipsum.",
-           "description": "Site inspection appointment",
-           "dateTime": "13 Sep 2020, 09:30 pm",
-           "locationTxt": "35th Street, Al Wasl Road, Dubai.",
-           "remarks": "Please meet engineer Ahmed at the site on time",
-           "expiryDate": "13 Sep 2020",
-           "trackingData":[
-               {"title": "License Details",
-               "date": "13 Sep 2020 | 5:00 PM",
-                   "status":"1"},
-               {"title": "Verification",
-               "date": "13 Sep 2020 | 5:00 PM",
-                   "status":"1"},
-               {"title": "Payment",
-               "date": "13 Sep 2020 | 5:00 PM",
-                   "status":"0"}
-           ]
-           }
-
-           ]
+    "utility":
+    {
+        "title": "Utilities & Bills",
+        "imageName": "Group 7",
+        "totalBills": "1,200 AED",
+        "totalDues": "950 AED",
+        "data":[
+            {
+                "title": "SEWA Bill",
+                "dateTxt": "Due: 28 Jul 2020",
+                "priceTxt": "400 AED"
+            },
+            {
+                "title": "SEWA Bill",
+                "dateTxt": "Due: 28 Jul 2020",
+                "priceTxt": "400 AED"
+            },
+            {
+                "title": "SEWA Bill",
+                "dateTxt": "Due: 28 Jul 2020",
+                "priceTxt": "400 AED"
+            },
+            {
+                "title": "SEWA Bill",
+                "dateTxt": "Due: 28 Jul 2020",
+                "priceTxt": "400 AED"
+            },
+            {
+                "title": "SEWA Bill",
+                "dateTxt": "Due: 28 Jul 2020",
+                "priceTxt": "400 AED"
+            },
+            {
+                "title": "SEWA Bill",
+                "dateTxt": "Due: 28 Jul 2020",
+                "priceTxt": "400 AED"
+            },
+            {
+                "title": "SEWA Bill",
+                "dateTxt": "Due: 28 Jul 2020",
+                "priceTxt": "400 AED"
+            },
+            {
+                "title": "SEWA Bill",
+                "dateTxt": "Due: 28 Jul 2020",
+                "priceTxt": "400 AED"
+            },
+            {
+                "title": "SEWA Bill",
+                "dateTxt": "Due: 28 Jul 2020",
+                "priceTxt": "400 AED"
+            },
+            {
+                "title": "SEWA Bill",
+                "dateTxt": "Due: 28 Jul 2020",
+                "priceTxt": "400 AED"
+            }
+        ]
+    },
+    "event": {
+        "title": "Upcoming Event",
+        "imageName": "Group 9",
+        "data":[
+            {
+                "title": "March Meeting 2020: Unravelling the Present",
+                "dateTxt": "14 Sep - 18 Sep | 9:00 AM",
+                "imageName": "img1"
+            }
+        ]
+    },
+    "ticket": {
+        "title": "Tickets",
+        "imageName": "Group 9",
+        "data":[
+            {
+                "title": "Rainroom",
+                "dateTxt": "14 Sep - 18 Sep | 9:00 AM",
+                "imageName": "img2"
+            }
+        ]
+    },
+    "weather": {
+        "title": "Weather",
+        "imageName": "Group 8",
+        "degree": "22",
+        "day": "Friday",
+        "weatherImageName": "sunny",
+        "location": "Sharjah",
+        "weatherText": "Mostly Clear",
+        "data":[
+            { "time": "5 PM", "imageName": "sunny", "degree": "22" },
+            { "time": "6 PM", "imageName": "cloudy1", "degree": "22" },
+            { "time": "7 PM", "imageName": "cloudy2", "degree": "22" },
+            { "time": "8 PM", "imageName": "cloudy3", "degree": "22" },
+            { "time": "9 PM", "imageName": "cloudy1", "degree": "22" },
+            { "time": "10 PM", "imageName": "sunny", "degree": "22" },
+            { "time": "11 PM", "imageName": "cloudy2", "degree": "22" },
+            { "time": "12 PM", "imageName": "cloudy3", "degree": "22" }
+        ]
+    },
+    "myRequests": {
+        "title": "My Requests",
+        "imageName": "Group 27",
+        "pendingRequests": 12
+    }
 }

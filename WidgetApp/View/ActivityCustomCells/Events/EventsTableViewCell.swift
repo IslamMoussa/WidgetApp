@@ -16,7 +16,8 @@ class EventsTableViewCell: UITableViewCell {
     @IBOutlet var headerImageView: UIImageView!
     @IBOutlet var headerTitleLabel: UILabel!
     @IBOutlet var headerEditButton: UIImageView!
-
+    @IBOutlet var containerView: UIView!
+    
     var eventCellViewModel: EventCellViewModel? {
         didSet {
             titleLabel.text = eventCellViewModel?.title
@@ -26,5 +27,10 @@ class EventsTableViewCell: UITableViewCell {
             headerTitleLabel.text = eventCellViewModel?.headerTitleText
             headerImageView.image = UIImage(named: eventCellViewModel?.headerImageName ?? "")
         }
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        containerView.radiusWithBorder(cornerRadius: 10, borderWidth: 0.2, color: UIColor.lightGray.cgColor)
     }
 }

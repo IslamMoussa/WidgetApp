@@ -34,8 +34,7 @@ class ActivityViewModel {
 
     func initFetch() {
         state = .loading
-        apiService.fetchActivities { [weak self] (_, activities, error) in
-            print(activities)
+        apiService.fetchActivities { [weak self] (_, activityModel, error) in
             guard let self = self else {
                 return
             }
@@ -46,7 +45,7 @@ class ActivityViewModel {
                 return
             }
 
-            self.processFetchedActivities(activities: activities)
+            self.processFetchedActivities(activityModel: activityModel)
             self.state = .populated
         }
     }
@@ -143,10 +142,9 @@ class ActivityViewModel {
         self.reloadTableViewClosure?()
     }
 
-    private func processFetchedActivities( activities: [Activity] ) {
-        self.activities = activities // Cache
+    private func processFetchedActivities( activityModel: ActivityModel ) {
+        self.activities = activityModel.activities // Cache
         self.reloadTableViewClosure?()
-
         //var vms = [RequestCellViewModel]()
         //for request in activities {
          //   vms.append( createCellViewModel(request: request) )

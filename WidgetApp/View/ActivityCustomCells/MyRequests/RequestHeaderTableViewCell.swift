@@ -14,7 +14,7 @@ class RequestHeaderTableViewCell: UITableViewCell {
     @IBOutlet var sectionTitleLabel: UILabel!
     @IBOutlet var viewAllButton: UIButton!
     @IBOutlet var editButton: UIButton!
-
+    @IBOutlet var containerView: UIView!
     var requestHeaderCellViewModel: MyRequestHeaderCellViewModel? {
         didSet {
             sectionTitleLabel.text = requestHeaderCellViewModel?.titleText
@@ -26,6 +26,6 @@ class RequestHeaderTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         viewAllButton.radiusWithBorder(cornerRadius: 10, borderWidth: 1, hexColor: "#027C71")
-
+        containerView.radiusWithBorder(cornerRadius: 10, borderWidth: 0.2, color: UIColor.lightGray.cgColor)
     }
 }

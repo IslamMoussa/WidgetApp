@@ -77,7 +77,7 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         case .weather:
             return 300
         default:
-            return 110.0
+            return 150.0
         }
     }
 
